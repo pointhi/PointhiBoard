@@ -1,0 +1,72 @@
+/*
+ * @file   main.c
+ * @author thomas
+ *
+ * Created on 24. März 2013, 18:36
+ */
+
+//############### DEFINE CONSTANT
+
+#include <pic18.h>
+#include <xc.h>
+
+#define __OSC_INTOSC 1          // nutze Internen Oszillator
+
+#define o_FET_SPC_Vp         LATDbits.LATD0
+#define o_FET_SPC_5V         LATDbits.LATD1
+
+//############### END OF DEFINE CONSTANT
+
+
+#define _XTAL_FREQ 8000000
+
+#ifdef __OSC_INTOSC
+    #pragma config IESO = OFF, OSC = INTIO67, FCMEN = OFF               // CONFIG 1H        // Internal Oscilator
+#else
+    #pragma config IESO = OFF, OSC = HS, FCMEN = OFF                    // CONFIG 1H        // External Oscillator
+#endif
+#pragma config BOREN = OFF, PWRT = OFF                                  // CONFIG 2L
+#pragma config WDT = OFF                                                // CONFIG 2H
+#pragma config CCP2MX = PORTC, PBADEN = OFF, LPT1OSC = OFF, MCLRE = OFF // CONFIG 3H
+#pragma config STVREN = OFF, XINST = OFF, DEBUG = OFF                   // CONFIG 4L
+#pragma config CP0 = OFF, CP1 = OFF                                     // CONFIG 5L
+#pragma config CPD = OFF, CPB = OFF                                     // CONFIG 5H
+#pragma config WRT0 = OFF, WRT1 = OFF                                   // CONFIG 6L
+#pragma config WRTB = OFF, WRTC = OFF, WRTD = OFF                       // CONFIG 6H
+#pragma config EBTR0 = OFF, EBTR1 = OFF                                 // CONFIG 7L
+#pragma config EBTRB = OFF                                              // CONFIG 7H
+
+void main() {
+    #ifdef __OSC_INTOSC          // PLL Disabled, 8MHz
+        OSCCONbits.IRCF2    = 1;
+        OSCCONbits.IRCF1    = 1;
+        OSCCONbits.IRCF0    = 1;
+        OSCTUNEbits.PLLEN   = 0;
+    #endif
+
+    TRISA   = 0xFF;       // 1... Input
+    TRISB   = 0x00;       // 0... Output
+    TRISC   = 0xFF;
+    TRISD   = 0b11111100;
+    TRISE   = 0xFF;
+
+    LATA = 0x00;
+    LATB = 0x00;
+    LATC = 0x00;
+    LATD = 0x00;
+    LATE = 0x00;
+
+
+
+    while(1) {
+            o_FET_SPC_Vp = 1;
+        o_FET_SPC_5V = 1;
+        PORTB = 0xAA;
+        LATB = 0xAA;
+//        PORTDbits.RD0 = 1;
+//        PORTDbits.RD1 = 1;
+//        PORTD = 1;
+//        LATD = 1;
+    }
+}
+
