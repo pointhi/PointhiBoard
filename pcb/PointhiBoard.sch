@@ -23395,18 +23395,6 @@ Source: RS Component / Phycomp</description>
 <pinref part="SUPPLY24" gate="G$1" pin="GND1"/>
 </segment>
 </net>
-<net name="RA4" class="0">
-<segment>
-<pinref part="IC5" gate="G$1" pin="RA4/T0CKI/C1OUT"/>
-<wire x1="254" y1="-142.24" x2="223.52" y2="-142.24" width="0.1524" layer="91"/>
-<label x="223.52" y="-142.24" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="R26" gate="G$1" pin="2"/>
-<wire x1="558.8" y1="-132.08" x2="553.72" y2="-132.08" width="0.1524" layer="91"/>
-<label x="553.72" y="-132.08" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="N$58" class="0">
 <segment>
 <pinref part="R28" gate="G$1" pin="1"/>
@@ -23508,15 +23496,15 @@ Source: RS Component / Phycomp</description>
 </net>
 <net name="N$60" class="0">
 <segment>
-<pinref part="IC5" gate="G$1" pin="RA5/AN4/HLVDIN/C2OUT"/>
-<wire x1="254" y1="-147.32" x2="223.52" y2="-147.32" width="0.1524" layer="91"/>
 <pinref part="R31" gate="G$1" pin="1"/>
-<wire x1="223.52" y1="-147.32" x2="223.52" y2="-172.72" width="0.1524" layer="91"/>
 <wire x1="223.52" y1="-172.72" x2="142.24" y2="-172.72" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="-172.72" x2="142.24" y2="-170.18" width="0.1524" layer="91"/>
 <pinref part="R32" gate="G$1" pin="2"/>
 <wire x1="142.24" y1="-175.26" x2="142.24" y2="-172.72" width="0.1524" layer="91"/>
 <junction x="142.24" y="-172.72"/>
+<pinref part="IC5" gate="G$1" pin="RE1/WRN_AN6"/>
+<wire x1="254" y1="-157.48" x2="223.52" y2="-157.48" width="0.1524" layer="91"/>
+<wire x1="223.52" y1="-157.48" x2="223.52" y2="-172.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -23562,6 +23550,18 @@ Source: RS Component / Phycomp</description>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
 <wire x1="-35.56" y1="142.24" x2="-35.56" y2="137.16" width="0.1524" layer="91"/>
 <junction x="-35.56" y="137.16"/>
+</segment>
+</net>
+<net name="AN4" class="0">
+<segment>
+<pinref part="IC5" gate="G$1" pin="RA5/AN4/HLVDIN/C2OUT"/>
+<wire x1="254" y1="-147.32" x2="246.38" y2="-147.32" width="0.1524" layer="91"/>
+<label x="246.38" y="-147.32" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R26" gate="G$1" pin="2"/>
+<wire x1="558.8" y1="-132.08" x2="556.26" y2="-132.08" width="0.1524" layer="91"/>
+<label x="556.26" y="-132.08" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
