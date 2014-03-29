@@ -40,25 +40,27 @@ void main() {
 
     InitStartSequence();
 
+    TRISB = 0x00;
 
     while (1) {
-//        AdcSetPin(ADC_PORT_5V);
-//        ADCON0bits.GO_nDONE = 1; // Start ADC
-//        __delay_ms(50);
-//        if(AdcConvertToVoltage(AdcRead(),ADC_MULTIPLIER_5V) <= 4994) {
-//            IoSetLedInfo(LED_OFF);
-//            IoSetLedStat(LED_OFF);
-//        } else if(AdcConvertToVoltage(AdcRead(),ADC_MULTIPLIER_5V) <= 4995) {
-//            IoSetLedInfo(LED_ON);
-//            IoSetLedStat(LED_OFF);
-//        } else if(AdcConvertToVoltage(AdcRead(),ADC_MULTIPLIER_5V) <= 4996) {
-//            IoSetLedInfo(LED_OFF);
-//            IoSetLedStat(LED_ON);
-//        } else {
-//            IoSetLedInfo(LED_ON);
-//            IoSetLedStat(LED_ON);
-//        }
-//        IoSetLedInfo(LED_PEAK_SLOW);
+
+        //LATB = ((int)((AdcGetValue(ADC_ARRAY_VCC)/ADC_MULTIPLIER_VCC)*1024./5000.) >> 2) & 0xFF;
+
+        LATB = ((int)((AdcGetValue(ADC_ARRAY_AI)/ADC_MULTIPLIER_MPX)*1024./5000.) >> 2) & 0xFF;
+
+        if(AdcGetValue(ADC_ARRAY_VCC) <= 7000) {
+            IoSetLedInfo(LED_OFF);
+            IoSetLedStat(LED_OFF);
+        } else if(AdcGetValue(ADC_ARRAY_VCC) <= 10000) {
+            IoSetLedInfo(LED_ON);
+            IoSetLedStat(LED_OFF);
+        } else if(AdcGetValue(ADC_ARRAY_VCC) <= 12000) {
+            IoSetLedInfo(LED_OFF);
+            IoSetLedStat(LED_ON);
+        } else {
+            IoSetLedInfo(LED_ON);
+            IoSetLedStat(LED_ON);
+        }
     }
 }
 

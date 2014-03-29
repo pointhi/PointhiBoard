@@ -46,8 +46,8 @@ void InitPort() {
 
     TRISA = 0xFF; // 1... Input
     TRISB = 0xFF; // 0... Output
-    TRISC = 0xFF;
-    TRISD = 0b00111100;
+    TRISC = 0b11111110;
+    TRISD = 0b00001100;
     TRISE = 0x0F;
 
     LATA = 0x00;

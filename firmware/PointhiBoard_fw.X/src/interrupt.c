@@ -13,6 +13,7 @@
 #include "io.h"
 #include "adc.h"
 #include "i2c.h"
+#include "define.h"
 
 // Forward Declarations
 void InterruptInitTimer0();
@@ -48,6 +49,9 @@ void InterruptInitTimer0() {
 void InterruptInitAdc() {
     PIE1bits.ADIE = 1; // Aktiviere Interrupt für ADC
     IPR1bits.ADIP = 0; // Low Priority
+
+    // Start Endless ADC-Call
+    ADCON0bits.GO_nDONE = 1; // Start ADC
 }
 
 void InterruptInitI2C() {

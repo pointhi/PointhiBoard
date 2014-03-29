@@ -46,16 +46,32 @@
 #define LED_PEAK_FAST           0x88
 #define LED_PEAK_FAST_INVERTED  0x22
 
+// Multiplexer
+
+#define MPX_PIN_0               0x00
+#define MPX_PIN_1               0x01
+#define MPX_PIN_2               0x02
+#define MPX_PIN_3               0x03
+
 // ADC-Port definitions
 
 #define ADC_PORT_MPX_Y          0
 #define ADC_PORT_MPX_X          1
 #define ADC_PORT_5V             4
-// Rev-1.3 not connected!
-//#define ADC_PORT_VCC            5
+// Rev-1.3 manual connected!
+#define ADC_PORT_VCC            5
+
+// ADC-Array definitions
+
+#define ADC_ARRAY_VCC           0
+#define ADC_ARRAY_5V            1
+#define ADC_ARRAY_MPX_Y         2
+#define ADC_ARRAY_MPX_X         6
+#define ADC_ARRAY_AI            ADC_ARRAY_MPX_Y
 
 // Define the voltage divider on the input for the ADC
 
+#define ADC_MULTIPLIER_MPX      1
 #define ADC_MULTIPLIER_5V       2
 #define ADC_MULTIPLIER_VCC      9
 

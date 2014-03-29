@@ -15,6 +15,10 @@ void AdcInterrupt();
 
 unsigned int AdcRead();
 void AdcSetPin(unsigned char _AdcPort);
+void AdcSetMpxPin(unsigned char _MpxPin);
+
+void AdcSetValue(unsigned char _id, unsigned int _value);
+unsigned int AdcGetValue(unsigned char _id);
 
 unsigned int AdcConvertToVoltage(unsigned int _AdcValue, float _multiplier);
 
