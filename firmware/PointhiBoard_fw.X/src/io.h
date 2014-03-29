@@ -10,14 +10,14 @@
 #ifndef IO_H
 #define	IO_H
 
-void IoSetLedInfo(unsigned char _ledMacro);
-void IoSetLedStat(unsigned char _ledMacro);
+inline void IoSetLedInfo(const unsigned char _ledMacro);
+inline void IoSetLedStat(const unsigned char _ledMacro);
 
 void IoGotoNextMacroBit();
 void IoUpdateLedOutput();
 
-void IoSetFet5v(unsigned char _value);
-void IoSetFetVcc(unsigned char _value);
+void IoSetFet5v(const unsigned char _value);
+void IoSetFetVcc(const unsigned char _value);
 
 #endif	/* IO_H */
 

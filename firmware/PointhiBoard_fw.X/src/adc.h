@@ -11,16 +11,16 @@
 #define	ADC_H
 
 void AdcInit();
-void AdcInterrupt();
+inline void AdcInterrupt();
 
-unsigned int AdcRead();
-void AdcSetPin(unsigned char _AdcPort);
-void AdcSetMpxPin(unsigned char _MpxPin);
+inline unsigned int AdcRead();
+inline void AdcSetPin(const unsigned char _AdcPort);
+void AdcSetMpxPin(const unsigned char _MpxPin);
 
-void AdcSetValue(unsigned char _id, unsigned int _value);
-unsigned int AdcGetValue(unsigned char _id);
+void AdcSetValue(const unsigned char _id, const unsigned int _value);
+unsigned int AdcGetValue(const unsigned char _id);
 
-unsigned int AdcConvertToVoltage(unsigned int _AdcValue, float _multiplier);
+unsigned int AdcConvertToVoltage(const unsigned int _AdcValue, const float _multiplier);
 
 #endif	/* ADC_H */
 

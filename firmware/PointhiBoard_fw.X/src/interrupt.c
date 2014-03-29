@@ -20,7 +20,7 @@
 void InterruptInitTimer0();
 void InterruptInitAdc();
 void InterruptInitI2C();
-void InterruptOfTimer0();
+inline void InterruptOfTimer0();
 
 void InterruptInit() {
     InterruptInitTimer0();
@@ -60,7 +60,7 @@ void InterruptInitI2C() {
     IPR1bits.SSPIP = 0; // Low Priority
 }
 
-void InterruptOfTimer0() {
+inline void InterruptOfTimer0() {
     IoUpdateLedOutput();
     IoGotoNextMacroBit();
     TimeInterrupt();

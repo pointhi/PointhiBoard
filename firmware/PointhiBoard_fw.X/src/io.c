@@ -17,11 +17,11 @@ unsigned char LedStatMacro = LED_OFF;
 
 unsigned char LedActiveMacroBit = 0x01;
 
-void IoSetLedInfo(unsigned char _ledMacro) {
+inline void IoSetLedInfo(const unsigned char _ledMacro) {
     LedInfoMacro = _ledMacro;
 }
 
-void IoSetLedStat(unsigned char _ledMacro) {
+inline void IoSetLedStat(const unsigned char _ledMacro) {
     LedStatMacro = _ledMacro;
 }
 
@@ -47,7 +47,7 @@ void IoUpdateLedOutput() {
     }
 }
 
-void IoSetFet5v(unsigned char _value) {
+void IoSetFet5v(const unsigned char _value) {
     if (_value) {
         o_FET_5V = 1;
     } else {
@@ -55,7 +55,7 @@ void IoSetFet5v(unsigned char _value) {
     }
 }
 
-void IoSetFetVcc(unsigned char _value) {
+void IoSetFetVcc(const unsigned char _value) {
         if (_value) {
         o_FET_VCC = 1;
     } else {

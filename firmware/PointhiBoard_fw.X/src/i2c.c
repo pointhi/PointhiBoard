@@ -38,7 +38,7 @@ void I2cInit() {
     //    SSPCON2bits.SEN = 1;        // Clock Streching is enabled for transmit and receive
 }
 
-void I2cInterrupt() {
+inline void I2cInterrupt() {
     if (SSPSTATbits.BF) // New Byte recive
     {
         SSPSTATbits.BF = 0;

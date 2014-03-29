@@ -10,12 +10,12 @@
 #ifndef TIME_H
 #define	TIME_H
 
-void TimeInterrupt();
+inline void TimeInterrupt();
 
-unsigned int TimeGetTimestamp();
-unsigned int TimeGetDifference(unsigned int _lower_timestamp, unsigned int _higher_timestamp);
+inline unsigned int TimeGetTimestamp();
+unsigned int TimeGetDifference(const unsigned int _lower_timestamp, const unsigned int _higher_timestamp);
 
-void TimeWaitMs(unsigned int _delay);
+void TimeWaitMs(const unsigned int _delay);
 
 #endif	/* TIME_H */
 

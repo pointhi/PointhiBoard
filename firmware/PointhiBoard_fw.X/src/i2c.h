@@ -11,7 +11,7 @@
 #define	I2C_H
 
 void I2cInit();
-void I2cInterrupt();
+inline void I2cInterrupt();
 
 #endif	/* I2C_H */
 

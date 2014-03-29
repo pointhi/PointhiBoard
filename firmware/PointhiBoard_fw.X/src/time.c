@@ -16,18 +16,18 @@
 
 unsigned int timeTimestampMs = 0;
 
-void TimeInterrupt() {
+inline void TimeInterrupt() {
     timeTimestampMs += TIME_TIMER_TICK;
     if(timeTimestampMs >= TIME_TIMESTAMP_RESET) {
         timeTimestampMs -= TIME_TIMESTAMP_RESET;
     }
 }
 
-unsigned int TimeGetTimestamp() {
+inline unsigned int TimeGetTimestamp() {
     return timeTimestampMs;
 }
 
-unsigned int TimeGetDifference(unsigned int _lower_timestamp, unsigned int _higher_timestamp) {
+unsigned int TimeGetDifference(const unsigned int _lower_timestamp, const unsigned int _higher_timestamp) {
     if(_lower_timestamp <= _higher_timestamp) {
         return _higher_timestamp - _lower_timestamp;
     } else {
@@ -35,7 +35,7 @@ unsigned int TimeGetDifference(unsigned int _lower_timestamp, unsigned int _high
     }
 }
 
-void TimeWaitMs(unsigned int _delay) {
+void TimeWaitMs(const unsigned int _delay) {
     unsigned int currentTimestampMs = TimeGetTimestamp();
     while(TimeGetDifference(currentTimestampMs,TimeGetTimestamp()) < _delay && _delay < TIME_TIMESTAMP_RESET-TIME_TIMER_TICK);
 }
