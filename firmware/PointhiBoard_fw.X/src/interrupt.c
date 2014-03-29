@@ -14,6 +14,7 @@
 #include "adc.h"
 #include "i2c.h"
 #include "define.h"
+#include "time.h"
 
 // Forward Declarations
 void InterruptInitTimer0();
@@ -62,6 +63,7 @@ void InterruptInitI2C() {
 void InterruptOfTimer0() {
     IoUpdateLedOutput();
     IoGotoNextMacroBit();
+    TimeInterrupt();
 }
 
 void interrupt tc_int(void) {

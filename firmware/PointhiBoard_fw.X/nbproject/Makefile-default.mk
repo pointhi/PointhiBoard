@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/main.c src/interrupt.c src/init.c src/io.c src/adc.c src/i2c.c
+SOURCEFILES_QUOTED_IF_SPACED=src/main.c src/interrupt.c src/init.c src/io.c src/adc.c src/i2c.c src/test.c src/time.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.p1 ${OBJECTDIR}/src/interrupt.p1 ${OBJECTDIR}/src/init.p1 ${OBJECTDIR}/src/io.p1 ${OBJECTDIR}/src/adc.p1 ${OBJECTDIR}/src/i2c.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/main.p1.d ${OBJECTDIR}/src/interrupt.p1.d ${OBJECTDIR}/src/init.p1.d ${OBJECTDIR}/src/io.p1.d ${OBJECTDIR}/src/adc.p1.d ${OBJECTDIR}/src/i2c.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/main.p1 ${OBJECTDIR}/src/interrupt.p1 ${OBJECTDIR}/src/init.p1 ${OBJECTDIR}/src/io.p1 ${OBJECTDIR}/src/adc.p1 ${OBJECTDIR}/src/i2c.p1 ${OBJECTDIR}/src/test.p1 ${OBJECTDIR}/src/time.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/main.p1.d ${OBJECTDIR}/src/interrupt.p1.d ${OBJECTDIR}/src/init.p1.d ${OBJECTDIR}/src/io.p1.d ${OBJECTDIR}/src/adc.p1.d ${OBJECTDIR}/src/i2c.p1.d ${OBJECTDIR}/src/test.p1.d ${OBJECTDIR}/src/time.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/main.p1 ${OBJECTDIR}/src/interrupt.p1 ${OBJECTDIR}/src/init.p1 ${OBJECTDIR}/src/io.p1 ${OBJECTDIR}/src/adc.p1 ${OBJECTDIR}/src/i2c.p1
+OBJECTFILES=${OBJECTDIR}/src/main.p1 ${OBJECTDIR}/src/interrupt.p1 ${OBJECTDIR}/src/init.p1 ${OBJECTDIR}/src/io.p1 ${OBJECTDIR}/src/adc.p1 ${OBJECTDIR}/src/i2c.p1 ${OBJECTDIR}/src/test.p1 ${OBJECTDIR}/src/time.p1
 
 # Source Files
-SOURCEFILES=src/main.c src/interrupt.c src/init.c src/io.c src/adc.c src/i2c.c
+SOURCEFILES=src/main.c src/interrupt.c src/init.c src/io.c src/adc.c src/i2c.c src/test.c src/time.c
 
 
 CFLAGS=
@@ -126,6 +126,22 @@ ${OBJECTDIR}/src/i2c.p1: src/i2c.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/src/i2c.d ${OBJECTDIR}/src/i2c.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/src/i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/src/test.p1: src/test.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src 
+	@${RM} ${OBJECTDIR}/src/test.p1.d 
+	@${RM} ${OBJECTDIR}/src/test.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/src/test.p1  src/test.c 
+	@-${MV} ${OBJECTDIR}/src/test.d ${OBJECTDIR}/src/test.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/test.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/src/time.p1: src/time.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src 
+	@${RM} ${OBJECTDIR}/src/time.p1.d 
+	@${RM} ${OBJECTDIR}/src/time.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=none  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/src/time.p1  src/time.c 
+	@-${MV} ${OBJECTDIR}/src/time.d ${OBJECTDIR}/src/time.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/time.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/src/main.p1: src/main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/src 
@@ -174,6 +190,22 @@ ${OBJECTDIR}/src/i2c.p1: src/i2c.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/src/i2c.p1  src/i2c.c 
 	@-${MV} ${OBJECTDIR}/src/i2c.d ${OBJECTDIR}/src/i2c.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/src/i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/src/test.p1: src/test.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src 
+	@${RM} ${OBJECTDIR}/src/test.p1.d 
+	@${RM} ${OBJECTDIR}/src/test.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/src/test.p1  src/test.c 
+	@-${MV} ${OBJECTDIR}/src/test.d ${OBJECTDIR}/src/test.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/test.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/src/time.p1: src/time.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/src 
+	@${RM} ${OBJECTDIR}/src/time.p1.d 
+	@${RM} ${OBJECTDIR}/src/time.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/src/time.p1  src/time.c 
+	@-${MV} ${OBJECTDIR}/src/time.d ${OBJECTDIR}/src/time.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/src/time.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

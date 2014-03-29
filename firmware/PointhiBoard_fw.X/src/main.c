@@ -12,8 +12,13 @@
 #include "define.h"
 #include "init.h"
 #include "io.h"
-
 #include "adc.h"
+#include "time.h"
+
+#ifdef __TEST
+    #include "test.h"
+    #warning "Compiling Test-Code!"
+#endif
 
 // Setting Config-Bits
 #ifdef __OSC_INTOSC
@@ -40,13 +45,35 @@ void main() {
 
     InitStartSequence();
 
+#ifdef __TEST
+    IoSetLedInfo(LED_BLINK_FAST);
+    IoSetLedStat(LED_BLINK_FAST);
+    unsigned char returnValue = TestRun();
+    if(returnValue) {
+        IoSetLedInfo(LED_PEAK_SLOW);
+        IoSetLedStat(LED_OFF);
+
+    } else {
+        IoSetLedInfo(LED_OFF);
+        IoSetLedStat(LED_ON);
+    }
+    
+    while (1) {
+    }
+#endif
+
     TRISB = 0x00;
 
     while (1) {
 
         //LATB = ((int)((AdcGetValue(ADC_ARRAY_VCC)/ADC_MULTIPLIER_VCC)*1024./5000.) >> 2) & 0xFF;
 
-        LATB = ((int)((AdcGetValue(ADC_ARRAY_AI)/ADC_MULTIPLIER_MPX)*1024./5000.) >> 2) & 0xFF;
+        for(unsigned char i=0;i<8;i++) {
+            LATB = 1 << i;
+            TimeWaitMs(100);
+        }
+
+        //LATB = ((int)((AdcGetValue(ADC_ARRAY_AI)/ADC_MULTIPLIER_MPX)*1024./5000.) >> 2) & 0xFF;
 
         if(AdcGetValue(ADC_ARRAY_VCC) <= 7000) {
             IoSetLedInfo(LED_OFF);

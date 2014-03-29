@@ -125,7 +125,7 @@ void AdcInterrupt() {
                     AdcSetMpxPin(MPX_PIN_0);
                 }
             } else {
-                // Get ADC-MPX-Y-Values
+                // Get ADC-MPX-X-Values
                 /* AI-4 = X0
                  * AI-5 = X3
                  * AI-6 = X2
@@ -134,19 +134,19 @@ void AdcInterrupt() {
                 unsigned int adcVoltageMpxX = AdcConvertToVoltage(rawAdcVoltage,ADC_MULTIPLIER_MPX);
                 
                 if(AdcInterruptCounter == ADC_ARRAY_MPX_X*2+1) {
-                    // AI-0
+                    // AI-4
                     AdcSetValue(ADC_ARRAY_MPX_X,adcVoltageMpxX);
                     AdcSetMpxPin(MPX_PIN_3);
                 } else if(AdcInterruptCounter == ADC_ARRAY_MPX_X*2+3) {
-                    // AI-1
+                    // AI-5
                     AdcSetValue(ADC_ARRAY_MPX_X+1,adcVoltageMpxX);
                     AdcSetMpxPin(MPX_PIN_2);
                 } else if(AdcInterruptCounter == ADC_ARRAY_MPX_X*2+5) {
-                    // AI-2
+                    // AI-6
                     AdcSetValue(ADC_ARRAY_MPX_X+3,adcVoltageMpxX);
                     AdcSetMpxPin(MPX_PIN_0);
                 } else {
-                    // AI-3
+                    // AI-7
                     AdcSetValue(ADC_ARRAY_MPX_X+4,adcVoltageMpxX);
                     AdcSetPin(ADC_PORT_VCC);
                 }

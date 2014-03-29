@@ -15,6 +15,7 @@
 #include "io.h"
 #include "adc.h"
 #include "i2c.h"
+#include "time.h"
 
 // Forward declarations
 void InitOsc();
@@ -62,13 +63,12 @@ void InitStartSequence() {
     IoSetLedStat(LED_ON);
     IoSetLedInfo(LED_ON);
 
-    for (int i = 0; i < 5; i++) {
-        __delay_ms(50);
-    }
+    TimeWaitMs(500);
+
     IoSetFet5v(FET_ON);
-    for (int i = 0; i < 10; i++) {
-        __delay_ms(50);
-    }
+
+    TimeWaitMs(500);
+    
     IoSetFetVcc(FET_ON);
 
     IoSetLedStat(LED_OFF);
