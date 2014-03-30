@@ -141,16 +141,13 @@ inline void AdcInterrupt() {
             } else if(AdcInterruptCounter == ADC_ARRAY_MPX_X*2+5) {
                 // AI-6
                 AdcSetValue(ADC_ARRAY_MPX_X+3,adcVoltageMpxX);
-                AdcSetMpxPin(MPX_PIN_0);
+                AdcSetMpxPin(MPX_PIN_1);
             } else {
                 // AI-7
                 AdcSetValue(ADC_ARRAY_MPX_X+4,adcVoltageMpxX);
                 AdcSetPin(ADC_PORT_VCC);
             }
         }
-    }
-    // Gabage-ADC-Run
-    else {
     }
 
     AdcInterruptCounter ++;
