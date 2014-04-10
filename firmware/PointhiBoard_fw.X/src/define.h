@@ -65,9 +65,10 @@
 
 #define ADC_ARRAY_VCC           0
 #define ADC_ARRAY_5V            1
-#define ADC_ARRAY_MPX_Y         2
-#define ADC_ARRAY_MPX_X         ADC_ARRAY_MPX_Y + 4
-#define ADC_ARRAY_AI            ADC_ARRAY_MPX_Y
+#define ADC_ARRAY_AI            2
+#define ADC_ARRAY_MPX_Y         ADC_ARRAY_AI
+#define ADC_ARRAY_MPX_X         (ADC_ARRAY_AI + 4)
+
 
 // Define the voltage divider on the input for the ADC
 

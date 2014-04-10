@@ -23,9 +23,11 @@ void AdcInit() {
     ADCON1 = 0x00;
     // Using Voltage-Referece
     ADCON1bits.VCFG1 = 1; // Vss
-    //ADCON1bits.VCFG0 = 1; // Vdd
+    ADCON1bits.VCFG0 = 1; // Vdd
 
     ADCON1 |= 0x08; // Enable AN0-AN6
+
+    CMCON = 0x00;
 
     ADCON2 = 0x00;
     ADCON2bits.ADFM = 1; // Right justified
@@ -75,7 +77,7 @@ unsigned int AdcGetValue(const unsigned char _id) {
 }
 
 unsigned int AdcConvertToVoltage(const unsigned int _AdcValue, const float _multiplier) {
-    return (unsigned int)((float)(5000./1024. * (float)_AdcValue) * _multiplier);
+    return (unsigned int)((float)(5000./1023. * (float)_AdcValue) * _multiplier);
 }
 
 inline void AdcInterrupt() {
@@ -129,7 +131,6 @@ inline void AdcInterrupt() {
              * AI-7 = X1
              */
             unsigned int adcVoltageMpxX = AdcConvertToVoltage(rawAdcVoltage,ADC_MULTIPLIER_MPX);
-
             if(AdcInterruptCounter == ADC_ARRAY_MPX_X*2+1) {
                 // AI-4
                 AdcSetValue(ADC_ARRAY_MPX_X,adcVoltageMpxX);
@@ -140,11 +141,11 @@ inline void AdcInterrupt() {
                 AdcSetMpxPin(MPX_PIN_2);
             } else if(AdcInterruptCounter == ADC_ARRAY_MPX_X*2+5) {
                 // AI-6
-                AdcSetValue(ADC_ARRAY_MPX_X+3,adcVoltageMpxX);
+                AdcSetValue(ADC_ARRAY_MPX_X+2,adcVoltageMpxX);
                 AdcSetMpxPin(MPX_PIN_1);
             } else {
                 // AI-7
-                AdcSetValue(ADC_ARRAY_MPX_X+4,adcVoltageMpxX);
+                AdcSetValue(ADC_ARRAY_MPX_X+3,adcVoltageMpxX);
                 AdcSetPin(ADC_PORT_VCC);
             }
         }
