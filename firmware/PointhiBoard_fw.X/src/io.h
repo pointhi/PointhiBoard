@@ -19,5 +19,15 @@ void IoUpdateLedOutput();
 void IoSetFet5v(const unsigned char _value);
 void IoSetFetVcc(const unsigned char _value);
 
+/** 
+ * @brief Set which port is Input, and which is output
+ *
+ * @param _value 1... Input, 0... Output
+ */
+inline void IoSetPortBTris(const unsigned char _value);
+
+inline void IoSetPortB(const unsigned char _value);
+inline unsigned char IoGetPortB();
+
 #endif	/* IO_H */
 

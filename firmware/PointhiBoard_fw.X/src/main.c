@@ -62,7 +62,7 @@ void main() {
     }
 #endif
 
-    TRISB = 0x00;
+    IoSetPortBTris(0x00);
 
     int currentTimestamp = TimeGetTimestamp();
 
@@ -71,19 +71,19 @@ void main() {
         if(TimeGetDifference(currentTimestamp,TimeGetTimestamp()) < 1000 ) {
             IoSetLedInfo(LED_OFF);
             IoSetLedStat(LED_OFF);
-            LATB = ((int)((AdcGetValue(ADC_ARRAY_AI)/ADC_MULTIPLIER_MPX)*1023./5000.) >> 2) & 0xFF;
+            IoSetPortB(((int)((AdcGetValue(ADC_ARRAY_AI)/ADC_MULTIPLIER_MPX)*1023./5000.) >> 2) & 0xFF);
         } else if(TimeGetDifference(currentTimestamp,TimeGetTimestamp()) < 2000 ) {
             IoSetLedInfo(LED_ON);
             IoSetLedStat(LED_OFF);
-            LATB = ((int)((AdcGetValue(ADC_ARRAY_AI+1)/ADC_MULTIPLIER_MPX)*1023./5000.) >> 2) & 0xFF;
+            IoSetPortB(((int)((AdcGetValue(ADC_ARRAY_AI+1)/ADC_MULTIPLIER_MPX)*1023./5000.) >> 2) & 0xFF);
         } else if(TimeGetDifference(currentTimestamp,TimeGetTimestamp()) < 3000 ) {
             IoSetLedInfo(LED_OFF);
             IoSetLedStat(LED_ON);
-            LATB = ((int)((AdcGetValue(ADC_ARRAY_AI+2)/ADC_MULTIPLIER_MPX)*1023./5000.) >> 2) & 0xFF;
+            IoSetPortB(((int)((AdcGetValue(ADC_ARRAY_AI+2)/ADC_MULTIPLIER_MPX)*1023./5000.) >> 2) & 0xFF);
         } else if(TimeGetDifference(currentTimestamp,TimeGetTimestamp()) < 4000 ) {
             IoSetLedInfo(LED_ON);
             IoSetLedStat(LED_ON);
-            LATB = ((int)((AdcGetValue(ADC_ARRAY_AI+3)/ADC_MULTIPLIER_MPX)*1023./5000.) >> 2) & 0xFF;
+            IoSetPortB(((int)((AdcGetValue(ADC_ARRAY_AI+3)/ADC_MULTIPLIER_MPX)*1023./5000.) >> 2) & 0xFF);
         } else {
             currentTimestamp = TimeGetTimestamp();
         }

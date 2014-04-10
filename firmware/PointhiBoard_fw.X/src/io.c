@@ -62,3 +62,15 @@ void IoSetFetVcc(const unsigned char _value) {
         o_FET_VCC = 0;
     }
 }
+
+inline void IoSetPortBTris(const unsigned char _value) {
+    TRISB = _value;
+}
+
+inline void IoSetPortB(const unsigned char _value) {
+    LATB = _value;
+}
+
+inline unsigned char IoGetPortB() {
+    return PORTB;
+}
