@@ -25,6 +25,7 @@ void IoSetFetVcc(const unsigned char _value);
  * @param _value 1... Input, 0... Output
  */
 inline void IoSetPortBTris(const unsigned char _value);
+inline unsigned char IoGetPortBTris();
 
 inline void IoSetPortB(const unsigned char _value);
 inline unsigned char IoGetPortB();

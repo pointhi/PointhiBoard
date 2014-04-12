@@ -67,6 +67,10 @@ inline void IoSetPortBTris(const unsigned char _value) {
     TRISB = _value;
 }
 
+inline unsigned char IoGetPortBTris() {
+    return TRISB;
+}
+
 inline void IoSetPortB(const unsigned char _value) {
     LATB = _value;
 }

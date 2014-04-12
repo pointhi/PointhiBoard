@@ -76,6 +76,14 @@ unsigned int AdcGetValue(const unsigned char _id) {
     }
 }
 
+unsigned char AdcGetValueHighByte(const unsigned char _id) {
+    return (AdcGetValue(_id) >> 8) & 0xFF;
+}
+
+unsigned char AdcGetValueLowByte(const unsigned char _id) {
+    return AdcGetValue(_id) & 0xFF;
+}
+
 unsigned int AdcConvertToVoltage(const unsigned int _AdcValue, const float _multiplier) {
     return (unsigned int)((float)(5000./1023. * (float)_AdcValue) * _multiplier);
 }

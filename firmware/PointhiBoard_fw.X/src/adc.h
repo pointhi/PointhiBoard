@@ -19,6 +19,8 @@ void AdcSetMpxPin(const unsigned char _MpxPin);
 
 void AdcSetValue(const unsigned char _id, const unsigned int _value);
 unsigned int AdcGetValue(const unsigned char _id);
+unsigned char AdcGetValueHighByte(const unsigned char _id);
+unsigned char AdcGetValueLowByte(const unsigned char _id);
 
 unsigned int AdcConvertToVoltage(const unsigned int _AdcValue, const float _multiplier);
 

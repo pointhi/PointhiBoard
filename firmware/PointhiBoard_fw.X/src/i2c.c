@@ -13,6 +13,7 @@
 #include "i2c.h"
 #include "define.h"
 #include "io.h"
+#include "adc.h"
 
 unsigned char I2cRegisterIndex = 0;
 unsigned char I2cInterruptFrameIndex = 0;
@@ -21,9 +22,6 @@ unsigned char I2cInterruptI2cAdress = 0;
 void I2cInit() {
     // Set I2C-Adress
     SSPADD = I2C_DEFAULT_ADRESS; 
-
-//    IoSetPortBTris(0x00);
-//    IoSetPortB(I2cRegisterIndex);
 
     // Clear SSPSTAT
     SSPSTAT = 0x00;
@@ -79,7 +77,118 @@ inline void I2cInterrupt() {
         // Master Read Data from Slave
         
         // Perform Action depending on RegisterIndex
+        /* 0x01     TRISB
+         * 0x0F     Read PORTB
+         * 0x10     ADC - 0 VOLTAGE-HIGH-BYTE
+         * 0x11     ADC - 0 VOLTAGE-LOW-BYTE
+         * 0x12     ADC - 1 VOLTAGE-HIGH-BYTE
+         * 0x13     ADC - 1 VOLTAGE-LOW-BYTE
+         * 0x14     ADC - 2 VOLTAGE-HIGH-BYTE
+         * 0x15     ADC - 2 VOLTAGE-LOW-BYTE
+         * 0x16     ADC - 3 VOLTAGE-HIGH-BYTE
+         * 0x17     ADC - 3 VOLTAGE-LOW-BYTE
+         * 0x18     ADC - 4 VOLTAGE-HIGH-BYTE
+         * 0x19     ADC - 4 VOLTAGE-LOW-BYTE
+         * 0x1A     ADC - 5 VOLTAGE-HIGH-BYTE
+         * 0x1B     ADC - 5 VOLTAGE-LOW-BYTE
+         * 0x1C     ADC - 6 VOLTAGE-HIGH-BYTE
+         * 0x1D     ADC - 6 VOLTAGE-LOW-BYTE
+         * 0x1E     ADC - 7 VOLTAGE-HIGH-BYTE
+         * 0x1F     ADC - 7 VOLTAGE-LOW-BYTE
+         * 0x20     ADC - VCC VOLTAGE-HIGH-BYTE
+         * 0x21     ADC - VCC VOLTAGE-LOW-BYTE
+         * 0x22     ADC - +5V VOLTAGE-HIGH-BYTE
+         * 0x23     ADC - +5V VOLTAGE-LOW-BYTE
+         */
         switch(I2cRegisterIndex) {
+            case 0x01:
+                SSPBUF = IoGetPortBTris();
+                break;
+                
+            case 0x0F:
+                SSPBUF = IoGetPortB();
+                break;
+
+            case 0x10:
+                SSPBUF = AdcGetValueHighByte(ADC_ARRAY_AI);
+                break;
+
+            case 0x11:
+                SSPBUF = AdcGetValueLowByte(ADC_ARRAY_AI);
+                break;
+
+            case 0x12:
+                SSPBUF = AdcGetValueHighByte(ADC_ARRAY_AI+1);
+                break;
+
+            case 0x13:
+                SSPBUF = AdcGetValueLowByte(ADC_ARRAY_AI+1);
+                break;
+
+            case 0x14:
+                SSPBUF = AdcGetValueHighByte(ADC_ARRAY_AI+2);
+                break;
+
+            case 0x15:
+                SSPBUF = AdcGetValueLowByte(ADC_ARRAY_AI+2);
+                break;
+
+            case 0x16:
+                SSPBUF = AdcGetValueHighByte(ADC_ARRAY_AI+3);
+                break;
+
+            case 0x17:
+                SSPBUF = AdcGetValueLowByte(ADC_ARRAY_AI+3);
+                break;
+
+            case 0x18:
+                SSPBUF = AdcGetValueHighByte(ADC_ARRAY_AI+4);
+                break;
+
+            case 0x19:
+                SSPBUF = AdcGetValueLowByte(ADC_ARRAY_AI+4);
+                break;
+
+            case 0x1A:
+                SSPBUF = AdcGetValueHighByte(ADC_ARRAY_AI+5);
+                break;
+
+            case 0x1B:
+                SSPBUF = AdcGetValueLowByte(ADC_ARRAY_AI+5);
+                break;
+
+            case 0x1C:
+                SSPBUF = AdcGetValueHighByte(ADC_ARRAY_AI+6);
+                break;
+
+            case 0x1D:
+                SSPBUF = AdcGetValueLowByte(ADC_ARRAY_AI+6);
+                break;
+
+            case 0x1E:
+                SSPBUF = AdcGetValueHighByte(ADC_ARRAY_AI+7);
+                break;
+
+            case 0x1F:
+                SSPBUF = AdcGetValueLowByte(ADC_ARRAY_AI+7);
+                break;
+
+            case 0x20:
+                SSPBUF = AdcGetValueHighByte(ADC_ARRAY_VCC);
+                break;
+
+            case 0x21:
+                SSPBUF = AdcGetValueLowByte(ADC_ARRAY_VCC);
+                break;
+
+            case 0x22:
+                SSPBUF = AdcGetValueHighByte(ADC_ARRAY_5V);
+                break;
+
+            case 0x23:
+                SSPBUF = AdcGetValueLowByte(ADC_ARRAY_5V);
+                break;
+
             default:
                 SSPBUF = I2cRegisterIndex;
                 break;
@@ -102,8 +211,20 @@ inline void I2cInterrupt() {
                 // Update Register Index
                 I2cRegisterIndex = SSPBUF; 
             } else {
+                
                 // Perform Action depending on RegisterIndex
+                /* 0x01     Set TRISB
+                 * 0x0F     Set PORTB
+                 */
                 switch(I2cRegisterIndex) {
+                    case 0x01:
+                        IoSetPortBTris(SSPBUF);
+                        break;
+
+                    case 0x0F:
+                        IoSetPortB(SSPBUF);
+                        break;
+
                     default: {
                         unsigned char I2cDelRegister = SSPBUF;
                         }
@@ -118,6 +239,4 @@ inline void I2cInterrupt() {
         // Release Clock
         SSPCON1bits.CKP = 1;
     }
-
-//    IoSetPortB(I2cRegisterIndex);
 }
