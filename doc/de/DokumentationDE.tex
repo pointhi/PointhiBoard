@@ -7,7 +7,7 @@
 
 \usepackage{graphicx}
   \graphicspath{ {../images/} }
-
+  
 \usepackage{color}
   \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
   \definecolor{lbkeywordcolor}{rgb}{0,0,0.89}
@@ -65,6 +65,7 @@
 
 \tableofcontents
 
+
 \newpage
 
 \section{Einleitung}
@@ -72,6 +73,7 @@
 Der Raspberry Pi ist ein einfacher Einplatinencomputer, welcher ideal für komplexe Steuerungs-/Regelungs- aufgaben im Bereich der Robotik, Hausautomatisierung, und vielen anderen Bereichen ist.\\
 Er zeichnet sich durch einen niedrigen Stromverbrauch in Verbindung mit einer großen Anzahl von Schnittstellen, angefangen von USB und LAN über Bussysteme wie SPI und I2C bis zu einzelnen Digitalen Ausgängen, welche mithilfe von Linux angesprochen werden können.\\
 Die Nutzung der Low-Level Schnittstellen die an einer Stiftleiste herausgeführt sind gestaltet sich aber nicht immer Trivial, auch ist die Spannungsversorgung in Robotern nicht für eine zusätzliche Last mit bis zu 1A ausgelegt. Aus diesem und anderen Gründen soll daher ein Erweiterungsboard für den Raspberry Pi entstehen welches grundlegende Aufgaben übernimmt, die für Systeme in Steuerungssystemen notwendig erscheinen.\\
+%\includegraphics[width=\textwidth]{pointhiboard_booting}
 
 \subsection{Überblick der Funktionen}
 Die Grundlegenden Ausstattung, die die Erweiterungsplatine besitzen soll, bzw. bereits besitzt.
@@ -183,15 +185,28 @@ Der RS232-TTL-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.r
 %\includegraphics[width=\textwidth]{pointhiboard_prototype_booting} \\
 %Das Board bekam bereits ein neues Layout, welches unter anderem Masseschleifen entfernte, und Status LEDs beinhaltet, die ein einfaches Debuggen ermöglichen sollen. Auch wurde der Schaltregler optimiert, welcher für das Board essentiell ist. \\
 
+\section{Platine}
+
+\subsection{Übersicht}
+
+\subsubsection{Top-Layer}
+
+\includegraphics[width=\textwidth]{pointhiboard_overview_top}
+
+\subsubsection{Bottom-Layer}
+
+\includegraphics[width=\textwidth]{pointhiboard_overview_bottom}
+
 \newpage
+\subsection{Bestückung}
 
-\section{Bestückung}
+Es sollten zuerst alle SMD-Bauteile auf dem Bottom-Layer, danach die auf dem Top-Layer bestückt werden. Am Schluss werden noch alle Steckverbinder und die Batteriehalterung angelötet, wobei die große Buchsenleiste, die mit dem Raspberry Pi verbunden wird als letztes angelötet werden sollte. 
 
-\subsection{Top-Layer}
+\subsubsection{Top-Layer}
 
 \includegraphics[width=\textwidth]{pointhiboard_board_top} \\
 
-\subsection{Bottom-Layer}
+\subsubsection{Bottom-Layer}
 
 \includegraphics[width=\textwidth]{pointhiboard_board_bottom} \\
 
@@ -201,7 +216,7 @@ Der RS232-TTL-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.r
 
 \subsection{Flashen des Steuer-PIC}
 
-Es wird ein ICSP-Programmiergerät, welches einen PIC18F4420 flashen kann am board angeschlossen (ICSP-Stecker). Der PIC sollte korrekt erkannt werden, und kann dann mit der Firmware beschrieben werden.
+Es wird ein ICSP-Programmiergerät, welches einen PIC18F4420 flashen kann am Board angeschlossen (ICSP-Stecker). Der PIC sollte korrekt erkannt werden, und kann dann mit der Firmware beschrieben werden.
 
 \subsection{Testen des Step-Down-Wandler}
 
@@ -225,7 +240,7 @@ Falls die Spannung höher als etwa 5,2V steigen sollte funktioniert der Step-Dow
     \hline
     \multirow{2}{*}{+5V, PWR-Led leuchtet nicht}
 	& Tiefentladeschutz aktiv (kurz aufleuchtende STAT-LED) \\ \cline{2-2}
-	& MOSFET schaltet nicht durc\mbox{} \\h \\
+	& MOSFET schaltet nicht durch \\
     \hline
     \end{tabular}
 \end{center}
@@ -282,7 +297,7 @@ sudo date -s "9 JAN 2014 12:00:00"
 
 \subsubsection{Fehlerbehebung}
 
-Falls wie bei mir die folgende Fehlermeldung hwclock: ''ioctl(RTC\_RD\_TIMEE) to /dev/rtc0 to read the time failed: Invalid argument`` auftritt, werden einfach die folgenden Befehle in die Shell der reihe nach eingegeben:
+Falls wie bei mir die folgende Fehlermeldung hwclock: ''ioctl(RTC\_RD\_TIMEE) to /dev/rtc0 to read the time failed: Invalid argument`` auftritt, werden einfach die folgenden Befehle in die Shell der Reihe nach eingegeben:
 \begin{lstlisting}[language=sh]
 hwclock -w
 hwclock -s
