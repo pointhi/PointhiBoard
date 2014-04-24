@@ -21640,8 +21640,8 @@ Low profile connectors, straight&lt;p&gt;
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="VDD1" library="supply1" deviceset="VDD" device=""/>
-<part name="X1" library="con-phoenix-500" deviceset="MSTBV2" device=""/>
-<part name="X2" library="con-phoenix-500" deviceset="MSTBV2" device=""/>
+<part name="X1" library="con-phoenix-500" deviceset="MSTBV2" device="" value="VCC-IN"/>
+<part name="X2" library="con-phoenix-500" deviceset="MSTBV2" device="" value="VCC-OUT"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="P+2" library="supply1" deviceset="V+" device=""/>
 <part name="R1" library="resistor" deviceset="R-EU_" device="R0805" value="10k"/>
@@ -21668,7 +21668,7 @@ Low profile connectors, straight&lt;p&gt;
 <part name="R6" library="resistor" deviceset="R-EU_" device="R0805" value="10k"/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="IC1" library="libsRobocup" deviceset="MCP7940N" device="MSOP8" value="MCP7940N"/>
-<part name="32.768KHZ" library="crystal" deviceset="CRYSTAL" device="MM20SS"/>
+<part name="Q4" library="crystal" deviceset="CRYSTAL" device="MM20SS" value="32.768KHZ"/>
 <part name="C1" library="resistor" deviceset="C-EU" device="C0805" value="10p"/>
 <part name="C2" library="resistor" deviceset="C-EU" device="C0805" value="10p"/>
 <part name="TP1" library="testpad" deviceset="PTR1" device="B2,54" value="PTR1B2,54"/>
@@ -21691,7 +21691,7 @@ Low profile connectors, straight&lt;p&gt;
 <part name="SJ1" library="jumper" deviceset="SJ" device=""/>
 <part name="J1" library="con-molex" deviceset="22-?-02" device="27-2021"/>
 <part name="GND39" library="supply1" deviceset="GND" device=""/>
-<part name="RS232_TTL" library="pinhead" deviceset="PINHD-1X4" device=""/>
+<part name="SV5" library="pinhead" deviceset="PINHD-1X4" device="" value="RS232_TTL"/>
 <part name="SUPPLY6" library="supply2" deviceset="+5V/2" device=""/>
 <part name="R7" library="resistor" deviceset="R-EU_" device="R0805" value="10R"/>
 <part name="R8" library="resistor" deviceset="R-EU_" device="R0805" value="1k"/>
@@ -21716,7 +21716,7 @@ Low profile connectors, straight&lt;p&gt;
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="SJ2" library="jumper" deviceset="SJ" device=""/>
-<part name="SV3" library="con-harting-ml" deviceset="ML6" device=""/>
+<part name="SV3" library="con-harting-ml" deviceset="ML6" device="" value="ICSP"/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
 <part name="D3" library="diode" deviceset="BAT54" device=""/>
 <part name="SUPPLY10" library="supply2" deviceset="+5V/1" device=""/>
@@ -21860,7 +21860,7 @@ Low profile connectors, straight&lt;p&gt;
 <instance part="R6" gate="G$1" x="10.16" y="22.86" rot="R90"/>
 <instance part="P+5" gate="1" x="10.16" y="35.56"/>
 <instance part="IC1" gate="G$1" x="10.16" y="-55.88"/>
-<instance part="32.768KHZ" gate="G$1" x="60.96" y="-45.72" rot="R270"/>
+<instance part="Q4" gate="G$1" x="60.96" y="-45.72" rot="R270"/>
 <instance part="C1" gate="G$1" x="68.58" y="-40.64" rot="R90"/>
 <instance part="C2" gate="G$1" x="68.58" y="-50.8" rot="R90"/>
 <instance part="TP1" gate="G$1" x="-17.78" y="-40.64" rot="R270"/>
@@ -21884,7 +21884,7 @@ Low profile connectors, straight&lt;p&gt;
 <instance part="J1" gate="-1" x="386.08" y="-5.08"/>
 <instance part="J1" gate="-2" x="386.08" y="-10.16"/>
 <instance part="GND39" gate="1" x="381" y="-22.86"/>
-<instance part="RS232_TTL" gate="A" x="96.52" y="121.92" rot="R180"/>
+<instance part="SV5" gate="A" x="96.52" y="121.92" rot="R180"/>
 <instance part="SUPPLY6" gate="G$1" x="104.14" y="147.32"/>
 <instance part="R7" gate="G$1" x="104.14" y="134.62" rot="R90"/>
 <instance part="R8" gate="G$1" x="111.76" y="106.68" rot="R90"/>
@@ -22661,7 +22661,7 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="IC1" gate="G$1" pin="X1"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <wire x1="66.04" y1="-40.64" x2="60.96" y2="-40.64" width="0.1524" layer="91"/>
-<pinref part="32.768KHZ" gate="G$1" pin="1"/>
+<pinref part="Q4" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="-40.64" x2="25.4" y2="-40.64" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="-43.18" x2="60.96" y2="-40.64" width="0.1524" layer="91"/>
 <junction x="60.96" y="-40.64"/>
@@ -22672,7 +22672,7 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="IC1" gate="G$1" pin="X2"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="66.04" y1="-50.8" x2="60.96" y2="-50.8" width="0.1524" layer="91"/>
-<pinref part="32.768KHZ" gate="G$1" pin="2"/>
+<pinref part="Q4" gate="G$1" pin="2"/>
 <wire x1="60.96" y1="-50.8" x2="25.4" y2="-50.8" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="-48.26" x2="60.96" y2="-50.8" width="0.1524" layer="91"/>
 <junction x="60.96" y="-50.8"/>
@@ -22859,7 +22859,7 @@ Low profile connectors, straight&lt;p&gt;
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="RS232_TTL" gate="A" pin="4"/>
+<pinref part="SV5" gate="A" pin="4"/>
 <wire x1="99.06" y1="124.46" x2="104.14" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="104.14" y1="129.54" x2="104.14" y2="124.46" width="0.1524" layer="91"/>
@@ -22875,7 +22875,7 @@ Low profile connectors, straight&lt;p&gt;
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="RS232_TTL" gate="A" pin="2"/>
+<pinref part="SV5" gate="A" pin="2"/>
 <pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="99.06" y1="119.38" x2="111.76" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="119.38" x2="111.76" y2="111.76" width="0.1524" layer="91"/>
@@ -23328,7 +23328,7 @@ Low profile connectors, straight&lt;p&gt;
 </net>
 <net name="N$57" class="0">
 <segment>
-<pinref part="RS232_TTL" gate="A" pin="1"/>
+<pinref part="SV5" gate="A" pin="1"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="99.06" y1="116.84" x2="116.84" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="116.84" x2="116.84" y2="111.76" width="0.1524" layer="91"/>
@@ -23369,7 +23369,7 @@ Low profile connectors, straight&lt;p&gt;
 <pinref part="SUPPLY18" gate="G$1" pin="GND1"/>
 </segment>
 <segment>
-<pinref part="RS232_TTL" gate="A" pin="3"/>
+<pinref part="SV5" gate="A" pin="3"/>
 <wire x1="99.06" y1="121.92" x2="104.14" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="121.92" x2="104.14" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="SUPPLY19" gate="G$1" pin="GND1"/>
@@ -23578,6 +23578,15 @@ Low profile connectors, straight&lt;p&gt;
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,129.54,-10.16,IC6P,VEE,GND,,,"/>
+<approved hash="104,1,134.62,5.08,IC6P,VCC,+5V/1,,,"/>
+<approved hash="113,1,36.5845,30.48,SJ1,,,,,"/>
+<approved hash="113,1,442.984,-60.96,SJ2,,,,,"/>
+<approved hash="113,1,521.724,-60.96,SJ3,,,,,"/>
+<approved hash="113,1,358.14,-138.041,RN4,,,,,"/>
+<approved hash="113,1,358.14,-117.721,RN5,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
