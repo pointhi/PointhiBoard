@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -12624,38 +12624,10 @@ Source: www.farnell.com/datasheets/247.pdf</description>
 <text x="4.064" y="-2.159" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
 </package>
 <package name="MI0283QT-9A">
-<hole x="-23" y="3" drill="3.2"/>
-<hole x="23" y="3" drill="3.2"/>
-<hole x="-23" y="82" drill="3.2"/>
-<hole x="23" y="82" drill="3.2"/>
-<wire x1="-26" y1="0" x2="26" y2="0" width="0.127" layer="21"/>
-<wire x1="26" y1="0" x2="26" y2="85" width="0.127" layer="21"/>
-<wire x1="26" y1="85" x2="-26" y2="85" width="0.127" layer="21"/>
-<wire x1="-26" y1="85" x2="-26" y2="0" width="0.127" layer="21"/>
-<pad name="GND_CON2@5" x="-1.27" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="GND_CON2@4" x="1.27" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="GND_CON2@3" x="3.81" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="GND_CON2@2" x="6.35" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="GND_CON2@1" x="8.89" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="GND_CON2@6" x="-3.81" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="GND_CON2@7" x="-6.35" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="GND_CON2@8" x="-8.89" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
-<pad name="SDO" x="-1.27" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="A-LCD_CS" x="1.27" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="A-SDI" x="1.27" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="A-SCL" x="-1.27" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="ADS_BUSY" x="-3.81" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="ADS_AUX" x="-6.35" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="ADS_IRQ" x="-6.35" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="A-ADS_CS" x="-3.81" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="A-LCD_LED" x="3.81" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="VCC_CON1@1" x="6.35" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="VCC_CON1@2" x="6.35" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="A-LCD_RST" x="3.81" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="GND_CON1@2" x="8.89" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="GND_CON1@1" x="8.89" y="5.715" drill="0.8" diameter="1.4224" shape="square"/>
-<pad name="ADS_VBAT" x="-8.89" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
-<pad name="ADS_VREF" x="-8.89" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
+<wire x1="-26" y1="0" x2="26" y2="0" width="0.127" layer="51"/>
+<wire x1="26" y1="0" x2="26" y2="85" width="0.127" layer="51"/>
+<wire x1="26" y1="85" x2="-26" y2="85" width="0.127" layer="51"/>
+<wire x1="-26" y1="85" x2="-26" y2="0" width="0.127" layer="51"/>
 <wire x1="-10.16" y1="1.27" x2="-10.16" y2="7.62" width="0.127" layer="21"/>
 <wire x1="-10.16" y1="7.62" x2="10.16" y2="7.62" width="0.127" layer="21"/>
 <wire x1="10.16" y1="7.62" x2="10.16" y2="1.27" width="0.127" layer="21"/>
@@ -12664,8 +12636,36 @@ Source: www.farnell.com/datasheets/247.pdf</description>
 <wire x1="10.16" y1="83.82" x2="10.16" y2="80.01" width="0.127" layer="21"/>
 <wire x1="10.16" y1="80.01" x2="-10.16" y2="80.01" width="0.127" layer="21"/>
 <wire x1="-10.16" y1="80.01" x2="-10.16" y2="83.82" width="0.127" layer="21"/>
+<pad name="A-ADS_CS" x="-3.81" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="A-LCD_CS" x="1.27" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="A-LCD_LED" x="3.81" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="A-LCD_RST" x="3.81" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="A-SCL" x="-1.27" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="A-SDI" x="1.27" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="ADS_AUX" x="-6.35" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="ADS_BUSY" x="-3.81" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="ADS_IRQ" x="-6.35" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="ADS_VBAT" x="-8.89" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="ADS_VREF" x="-8.89" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="GND_CON1@1" x="8.89" y="5.715" drill="0.8" diameter="1.4224" shape="square"/>
+<pad name="GND_CON1@2" x="8.89" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="GND_CON2@1" x="8.89" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="GND_CON2@2" x="6.35" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="GND_CON2@3" x="3.81" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="GND_CON2@4" x="1.27" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="GND_CON2@5" x="-1.27" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="GND_CON2@6" x="-3.81" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="GND_CON2@7" x="-6.35" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="GND_CON2@8" x="-8.89" y="81.915" drill="0.8" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="SDO" x="-1.27" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="VCC_CON1@1" x="6.35" y="5.715" drill="0.8" diameter="1.4224" shape="octagon"/>
+<pad name="VCC_CON1@2" x="6.35" y="3.175" drill="0.8" diameter="1.4224" shape="octagon"/>
 <text x="-25.4" y="86.36" size="1.27" layer="27">&gt;VALUE</text>
 <text x="-25.4" y="88.9" size="1.27" layer="25">&gt;NAME</text>
+<hole x="-23" y="3" drill="3.2"/>
+<hole x="23" y="3" drill="3.2"/>
+<hole x="-23" y="82" drill="3.2"/>
+<hole x="23" y="82" drill="3.2"/>
 </package>
 </packages>
 <symbols>
@@ -12709,26 +12709,21 @@ Source: www.farnell.com/datasheets/247.pdf</description>
 </polygon>
 </symbol>
 <symbol name="MI0283QT_9A">
-<pin name="GND@1" x="-20.32" y="17.78" length="middle"/>
-<pin name="VCC@1" x="-20.32" y="12.7" length="middle"/>
-<pin name="LCD_LED" x="-20.32" y="7.62" length="middle"/>
-<pin name="LCD_CS" x="-20.32" y="2.54" length="middle"/>
-<pin name="SDO" x="-20.32" y="-2.54" length="middle"/>
-<pin name="ADS_CS" x="-20.32" y="-7.62" length="middle"/>
-<pin name="ADS_IRQ" x="-20.32" y="-12.7" length="middle"/>
-<pin name="ADS_VBAT" x="-20.32" y="-17.78" length="middle"/>
-<pin name="ADS_VREF" x="20.32" y="-17.78" length="middle" rot="R180"/>
-<pin name="ADS_AUX" x="20.32" y="-12.7" length="middle" rot="R180"/>
-<pin name="ADS_BUSY" x="20.32" y="-7.62" length="middle" rot="R180"/>
-<pin name="SCL" x="20.32" y="-2.54" length="middle" rot="R180"/>
-<pin name="SDI" x="20.32" y="2.54" length="middle" rot="R180"/>
-<pin name="LCD_RST" x="20.32" y="7.62" length="middle" rot="R180"/>
-<pin name="VCC@2" x="20.32" y="12.7" length="middle" rot="R180"/>
-<pin name="GND@2" x="20.32" y="17.78" length="middle" rot="R180"/>
 <wire x1="-15.24" y1="22.86" x2="-15.24" y2="-22.86" width="0.254" layer="94"/>
 <wire x1="-15.24" y1="-22.86" x2="15.24" y2="-22.86" width="0.254" layer="94"/>
 <wire x1="15.24" y1="-22.86" x2="15.24" y2="22.86" width="0.254" layer="94"/>
 <wire x1="15.24" y1="22.86" x2="-15.24" y2="22.86" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-22.86" x2="15.24" y2="-48.26" width="0.254" layer="94"/>
+<wire x1="15.24" y1="-48.26" x2="-15.24" y2="-48.26" width="0.254" layer="94"/>
+<wire x1="-15.24" y1="-48.26" x2="-15.24" y2="-22.86" width="0.254" layer="94"/>
+<pin name="ADS_AUX" x="20.32" y="-12.7" length="middle" rot="R180"/>
+<pin name="ADS_BUSY" x="20.32" y="-7.62" length="middle" rot="R180"/>
+<pin name="ADS_CS" x="-20.32" y="-7.62" length="middle"/>
+<pin name="ADS_IRQ" x="-20.32" y="-12.7" length="middle"/>
+<pin name="ADS_VBAT" x="-20.32" y="-17.78" length="middle"/>
+<pin name="ADS_VREF" x="20.32" y="-17.78" length="middle" rot="R180"/>
+<pin name="GND@1" x="-20.32" y="17.78" length="middle"/>
+<pin name="GND@2" x="20.32" y="17.78" length="middle" rot="R180"/>
 <pin name="GND@3" x="-20.32" y="-27.94" length="middle"/>
 <pin name="GND@4" x="-20.32" y="-33.02" length="middle"/>
 <pin name="GND@5" x="-20.32" y="-38.1" length="middle"/>
@@ -12737,9 +12732,14 @@ Source: www.farnell.com/datasheets/247.pdf</description>
 <pin name="GND@8" x="20.32" y="-33.02" length="middle" rot="R180"/>
 <pin name="GND@9" x="20.32" y="-38.1" length="middle" rot="R180"/>
 <pin name="GND@10" x="20.32" y="-43.18" length="middle" rot="R180"/>
-<wire x1="15.24" y1="-22.86" x2="15.24" y2="-48.26" width="0.254" layer="94"/>
-<wire x1="15.24" y1="-48.26" x2="-15.24" y2="-48.26" width="0.254" layer="94"/>
-<wire x1="-15.24" y1="-48.26" x2="-15.24" y2="-22.86" width="0.254" layer="94"/>
+<pin name="LCD_CS" x="-20.32" y="2.54" length="middle"/>
+<pin name="LCD_LED" x="-20.32" y="7.62" length="middle"/>
+<pin name="LCD_RST" x="20.32" y="7.62" length="middle" rot="R180"/>
+<pin name="SCL" x="20.32" y="-2.54" length="middle" rot="R180"/>
+<pin name="SDI" x="20.32" y="2.54" length="middle" rot="R180"/>
+<pin name="SDO" x="-20.32" y="-2.54" length="middle"/>
+<pin name="VCC@1" x="-20.32" y="12.7" length="middle"/>
+<pin name="VCC@2" x="20.32" y="12.7" length="middle" rot="R180"/>
 <text x="-15.24" y="25.4" size="1.27" layer="95">&gt;NAME</text>
 <text x="-15.24" y="27.94" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
@@ -21645,7 +21645,7 @@ Source: RS Component / Phycomp</description>
 <part name="R14" library="resistor" deviceset="R-EU_" device="R0805" value="1k"/>
 <part name="P+7" library="supply1" deviceset="V+" device=""/>
 <part name="R16" library="resistor" deviceset="R-EU_" device="R0805" value="10k"/>
-<part name="F1" library="fuse" deviceset="FUSE" device="SHK20L" value="FUSESHK20L_6A">
+<part name="F1" library="fuse" deviceset="FUSE" device="SHK20L" value="6A">
 <attribute name="MF" value=""/>
 <attribute name="MPN" value=""/>
 <attribute name="OC_FARNELL" value="unknown"/>
@@ -21656,7 +21656,7 @@ Source: RS Component / Phycomp</description>
 <part name="R5" library="resistor" deviceset="R-EU_" device="R0805" value="10k"/>
 <part name="R6" library="resistor" deviceset="R-EU_" device="R0805" value="10k"/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
-<part name="IC1" library="libsRobocup" deviceset="MCP7940N" device="MSOP8"/>
+<part name="IC1" library="libsRobocup" deviceset="MCP7940N" device="MSOP8" value="MCP7940N"/>
 <part name="32.768KHZ" library="crystal" deviceset="CRYSTAL" device="MM20SS"/>
 <part name="C1" library="resistor" deviceset="C-EU" device="C0805" value="10p"/>
 <part name="C2" library="resistor" deviceset="C-EU" device="C0805" value="10p"/>
@@ -21697,7 +21697,7 @@ Source: RS Component / Phycomp</description>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="P+6" library="supply1" deviceset="V+" device=""/>
 <part name="SUPPLY7" library="supply2" deviceset="+5V/1" device=""/>
-<part name="IC5" library="libsRobocup" deviceset="PIC18F4420" device=""/>
+<part name="IC5" library="libsRobocup" deviceset="PIC18F4420" device="" value="18F4420"/>
 <part name="SV1" library="con-harting-ml" deviceset="ML14" device="-3ML"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="P+8" library="supply1" deviceset="+5V" device=""/>
