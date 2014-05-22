@@ -1,1 +1,5 @@
 *~
+/lib/libPointhiBoard/dist/
+/lib/libPointhiBoard/build/
+/examples/Test01/build/
+/examples/Test01/dist/
