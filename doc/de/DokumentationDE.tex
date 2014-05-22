@@ -39,6 +39,12 @@
 
 \newcommand{\path}[1]{\textcolor{pathcolor}{\textbf{#1}}} %texttt
 
+\makeatletter
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+\makeatother
+
+\usepackage{verbatim}
+
 \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
@@ -65,15 +71,14 @@
 
 \tableofcontents
 
-
-\newpage
-
 \section{Einleitung}
 
 Der Raspberry Pi ist ein einfacher Einplatinencomputer, welcher ideal für komplexe Steuerungs-/Regelungs- aufgaben im Bereich der Robotik, Hausautomatisierung, und vielen anderen Bereichen ist.\\
 Er zeichnet sich durch einen niedrigen Stromverbrauch in Verbindung mit einer großen Anzahl von Schnittstellen, angefangen von USB und LAN über Bussysteme wie SPI und I2C bis zu einzelnen Digitalen Ausgängen, welche mithilfe von Linux angesprochen werden können.\\
 Die Nutzung der Low-Level Schnittstellen die an einer Stiftleiste herausgeführt sind gestaltet sich aber nicht immer Trivial, auch ist die Spannungsversorgung in Robotern nicht für eine zusätzliche Last mit bis zu 1A ausgelegt. Aus diesem und anderen Gründen soll daher ein Erweiterungsboard für den Raspberry Pi entstehen welches grundlegende Aufgaben übernimmt, die für Systeme in Steuerungssystemen notwendig erscheinen.\\
 %\includegraphics[width=\textwidth]{pointhiboard_booting}
+
+\newpage
 
 \subsection{Überblick der Funktionen}
 Die Grundlegenden Ausstattung, die die Erweiterungsplatine besitzen soll, bzw. bereits besitzt.
@@ -120,7 +125,6 @@ Die Grundlegenden Ausstattung, die die Erweiterungsplatine besitzen soll, bzw. b
 \subsubsection{Steckverbinder}
 
 \paragraph{I2C} \mbox{} \\
-
 \includegraphics[scale=0.6]{connector_i2c} \\
 Der I2C-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.rn-wissen.de/index.php/RN-Definitionen\#I2C-Bus_Stecker}} belegt.
 \begin{center}
@@ -136,7 +140,6 @@ Der I2C-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.rn-wiss
 \end{center}
 
 \paragraph{ICSP} \mbox{} \\
-
 \includegraphics[scale=0.6]{connector_icsp} 
 \begin{center}
     \begin{tabular}{| l | l |}
@@ -150,9 +153,6 @@ Der I2C-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.rn-wiss
 \end{center}
 
 \paragraph{8-Bit} \mbox{} \\
-
-%\footnote{\url{http://www.rn-wissen.de/index.php/RN-Definitionen\#Datenportstecker_10polig_.288_Ports.29}}
-
 \includegraphics[scale=0.6]{connector_8-bit}
 \begin{center}
     \begin{tabular}{| l | l |}
@@ -165,8 +165,6 @@ Der I2C-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.rn-wiss
 \end{center}
 
 \paragraph{RS232-TTL} \mbox{} \\
-
-
 \includegraphics[scale=0.6]{connector_rs232-ttl} \\
 Der RS232-TTL-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.rn-wissen.de/index.php/RN-Definitionen\#RS232_TTL_Stecker}} belegt.
 \begin{center}
@@ -185,6 +183,7 @@ Der RS232-TTL-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.r
 %\includegraphics[width=\textwidth]{pointhiboard_prototype_booting} \\
 %Das Board bekam bereits ein neues Layout, welches unter anderem Masseschleifen entfernte, und Status LEDs beinhaltet, die ein einfaches Debuggen ermöglichen sollen. Auch wurde der Schaltregler optimiert, welcher für das Board essentiell ist. \\
 
+\newpage
 \section{Platine}
 
 \subsection{Übersicht}
@@ -221,7 +220,7 @@ Es wird ein ICSP-Programmiergerät, welches einen PIC18F4420 flashen kann am Boa
 \subsection{Testen des Step-Down-Wandler}
 
 \begin{enumerate}
- \item Es wird am Eingang des Board ein Netzteil mit folgenden Einstellungen angeschlossen: $I_{max} ~= 100mA, U_a = 5V$
+ \item Es wird am Eingang des Board ein Netzteil mit folgenden Einstellungen angeschlossen: $I_{max} \simeq 100mA, U_a = 5V$
  \item Am Spannungs-Ausgang für den Raspbery Pi wird ein Multimeter angeschlossen, welches eine Spannung von ungefähr 5V anzeigen sollte.
  \item Jetzt wird die Spannung des Netzteiles langsam auf etwa 10-12V gesteigert, die Spannung am Multimeter darf dabei eine Spannung von 5,1-5,2V nicht überschreiten!
 Falls die Spannung höher als etwa 5,2V steigen sollte funktioniert der Step-Down-Wandler nicht ordnungsgemäß. Der Step-Down-Wandler auf der Platine muss überprüft und wenn möglich repariert werden. Eine zu hohe Spannung am 5V-Spannungskreis könnte ansonsten zu einer Beschädigung diverser Bauteile auf dieser, und anderen angeschlossenen Platinen führen.
@@ -247,7 +246,7 @@ Falls die Spannung höher als etwa 5,2V steigen sollte funktioniert der Step-Dow
 
 \subsection{Testen der Hardware}
 
-Der PIC wird mit der speziellen TEST-Firmware beschrieben\footnote{siehe Flashen des Steuer-PIC}. Dann werden die beiden 14-Poligen Stiftleisten 1:1 miteinander verbunden. Sobald das Board mit Spannung versorgt wird startet die Testroutine. Solange die Testroutine aktiv ist blinken beide Status-LEDs schnell. Wenn diese dann erfolgreich war, Leuchtet STAT dauerhaft. Falls die Testroutine fängt INFO zu blinken an.
+Der PIC wird mit der speziellen TEST-Firmware beschrieben\footnote{siehe Flashen des Steuer-PIC}. Dann werden die beiden 14-Poligen Stiftleisten 1:1 miteinander verbunden. Sobald das Board mit Spannung versorgt wird startet die Testroutine. Solange die Testroutine aktiv ist blinken beide Status-LEDs schnell. Wenn diese dann erfolgreich war, Leuchtet ``STAT'' dauerhaft. Falls die Testroutine fehlschlägt fängt die LED ``INFO'' zu blinken an.
 
 \newpage
 
@@ -272,7 +271,7 @@ i2c-dev
 \end{enumerate}
 
 \subsection{Aktivieren der I2C-Echtzeituhr}
-\let\thefootnote\relax\footnote{\url{http://www.100randomtasks.com/raspberry-pi-rtc}}
+\blfootnote{\url{http://www.100randomtasks.com/raspberry-pi-rtc}}
 
 \begin{enumerate}
  \item Hinzufügen der folgenden Zeile in der Datei \path{/etc/modules}:
@@ -296,7 +295,6 @@ sudo date -s "9 JAN 2014 12:00:00"
 \end{enumerate}
 
 \subsubsection{Fehlerbehebung}
-
 Falls wie bei mir die folgende Fehlermeldung hwclock: ''ioctl(RTC\_RD\_TIMEE) to /dev/rtc0 to read the time failed: Invalid argument`` auftritt, werden einfach die folgenden Befehle in die Shell der Reihe nach eingegeben:
 \begin{lstlisting}[language=sh]
 hwclock -w
@@ -305,27 +303,39 @@ hwclock -r
 \end{lstlisting}
 
 \subsection{Aktivieren des LCD-Touch-Displays (MI0283QT-9A)}
-\let\thefootnote\relax\footnotetext{\url{http://lallafa.de/blog/2013/07/watterotts-new-rpi-shieldbridge}}
-\let\thefootnote\relax\footnotetext{\url{http://busware.de/tiki-index.php?page=CCD_Installation}}
-\let\thefootnote\relax\footnotetext{\url{http://www.raspberrypirobot.com/1-8-tft-lcd-display-raspberry-pi-expansion-board/}}
+\blfootnote{\url{http://lallafa.de/blog/2013/07/watterotts-new-rpi-shieldbridge}}
+\blfootnote{\url{http://busware.de/tiki-index.php?page=CCD_Installation}}
+\blfootnote{\url{http://www.raspberrypirobot.com/1-8-tft-lcd-display-raspberry-pi-expansion-board/}}
 
 \begin{enumerate}
  \item Download ''FBTFT drivers as loadable modules. See 'Step-by-step' for loading drivers.'' \url{https://github.com/notro/fbtft/wiki#image-download}
+    \begin{lstlisting}
+sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update -O /usr/bin/rpi-update && sudo chmod +x /usr/bin/rpi-update
+    \end{lstlisting}
+    
+ \item Dann wird der Repository-Pfad geändert und ein update durchgeführt.
+    \begin{lstlisting}
+sudo REPO_URI=https://github.com/notro/rpi-firmware rpi-update
+sudo shutdown -r now
+    \end{lstlisting}
+ 
  \item In der Datei \path{/etc/modules} werden dann folgende Module hinzugefügt:
     \begin{lstlisting}
 fbtft_device
 ads7846_device
     \end{lstlisting}
+    
  \item In der Datei \path{/etc/modprobe.d/pointhiboard.conf} werden dann folgende Optionen definiert:
     \begin{lstlisting}
 options ads7846_device cs=0 speed=2000000 model=7846 x_min=250 x_max=3780 y_min=160 y_max=3930 pressure_max=255 x_plate_ohms=60 gpio_pendown=25 keep_vref_on=1 swap_xy=1 
 options fbtft_device cs=1  speed=16000000 fps=25 name=mi0283qt-9a gpios=reset:23,led:24 rotate=90
     \end{lstlisting}
- \item In der Datei \path{/etc/X11/xinit/xinitrc} wird dann folgendes vor . /etc/X11/Xsession eingefügt:
+    
+ \item In der Datei \path{/etc/X11/xinit/xinitrc} wird dann folgendes vor . /etc/X11/Xsession eingefügt:%# Touchpanel: Invert X and Y axis
     \begin{lstlisting}[language=sh]
-# Touchpanel: Invert X and Y axis
 DISPLAY=:0 xinput --set-prop 'ADS7846 Touchscreen' 'Evdev Axis Inversion' 1 1
     \end{lstlisting}
+    
  \item Damit die Konsole beim booten auf dem Display dargestellt wird, muss folgendes am ende in \path{/boot/cmdline.txt} hinzugefügt werden:
     \begin{lstlisting}
 fbcon=map:10 fbcon=font:ProFont6x11
@@ -381,5 +391,80 @@ Das erste übertragene Byte setzt den Schreib/Lese-Index fest. Dieser wird dann 
     0x23 	& ADC - +5V VOLTAGE-LOW-BYTE 	& \\ \hline
     \end{tabular}
 \end{center}
+
+\newpage
+\section{Anhänge}
+
+\subsection{Bestückungsplan}
+
+\subsubsection{Top-Layer}
+
+\includegraphics[width=118mm]{board_parts_top} \\
+
+\subsubsection{Bottom-Layer}
+
+\includegraphics[width=118mm]{board_parts_bottom} \\
+
+\newpage
+\subsection{Stückliste}
+
+\verbatiminput{../partlist.txt}
+
+\newpage
+\subsection{Bedienung des BusPirat}
+
+\blfootnote{\url{http://dangerousprototypes.com/docs/I2C}}
+
+Der BusPirat\footnote{\url{http://dangerousprototypes.com/bus-pirate-manual}} ist ein kompaktes Entwicklermodul zum Debuggen diverser Bussysteme. Er ist Open-Hardware, und kann in der Standardversion diverse Protokolle wie I2C, SPI, RS232, 1-Wire mitlesen und auch selber eigene Daten versenden. \\
+Ich habe den BusPirat zum debuggen des I2C-Codes Benutzt, und das hier stellt eine kurze Anleitung zur Inbetriebnahme dar.
+
+\subsubsection{Nötige Schritte zur Inbetriebnahme des I2C-Debugger}
+
+\begin{enumerate}
+ \item Einrichten des Terminals auf Ubuntu\footnote{\url{http://jumptuck.com/2010/01/20/using-the-bus-pirate-with-ubuntu}}
+ 
+ \item Konfiguration des BusPiraten über minicom
+\begin{lstlisting}
+m
+4
+3
+w
+p
+    \end{lstlisting}
+
+ \item Herstellung der Elektrischen Verbindungen zum Board (SDA, SCL, GND) 
+ 
+\end{enumerate} 
+
+\subsubsection{Arbeiten mit dem I2C-Debugger}
+
+\begin{itemize}
+ \item Suche die mit dem Bus verbundenen I2C-Bausteine:
+    \begin{lstlisting}
+(1)
+    \end{lstlisting}
+ \item I2C-Sniffer (bis 100kHz)
+    \begin{lstlisting}
+(2)
+    \end{lstlisting}
+
+  \item Schreibe Daten zu einem I2C-Baustein:
+    \begin{lstlisting}
+[0xC0 0x01 0x00]
+    \end{lstlisting}
+    Zuerst wird die Adresse geschrieben, danach kommen die zu übertragene Daten
+    
+\item Lese Daten von einem I2C-Baustein:
+    \begin{lstlisting}
+[0xC1 r]
+    \end{lstlisting}
+    Zuerst wird die Adresse geschrieben, danach kommt ein r:bitanzahl (funktioniert noch nicht ganz)
+\end{itemize}
+
+
+\newpage
+\subsection{Lizenz}
+
+\verbatiminput{../../LICENSE}
 
 \end{document}
