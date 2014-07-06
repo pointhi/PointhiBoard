@@ -26,6 +26,8 @@
   commentstyle=\color{lbcommentcolor},
   stringstyle=\color{lbstringcolor},
   breaklines=true,
+  %frame=single,
+  columns=fullflexible,
   xleftmargin=0.5cm,
   xrightmargin=0.5cm,
   framexleftmargin=0.25cm,
@@ -100,7 +102,7 @@ Die Grundlegenden Ausstattung, die die Erweiterungsplatine besitzen soll, bzw. b
 \begin{center}
     \begin{tabular}{| l | l | l | l | l |}
     \hline
-    Characteristic & Min & Typ. & Max & Units \\ \hline
+    \textbf{Characteristic} & \textbf{Min} & \textbf{Typ.} & \textbf{Max} & \textbf{Units} \\ \hline
     Breite & - & 60 & - & mm \\ \hline
     Länge & - & 110 & - & mm \\ \hline
     
@@ -112,13 +114,13 @@ Die Grundlegenden Ausstattung, die die Erweiterungsplatine besitzen soll, bzw. b
 \begin{center}
     \begin{tabular}{| l | l | l | l | l | l | l |}
     \hline
-    Characteristic 	& Symbol 	& Test Conditions 	& Min 	& Typ. 	& Max 	& Units \\ \hline
-    Versorgungsspannung & $U_{IN}$ 	& 			& 8 	& 12 	& 20 	& $V$ \\ \hline
-    Eingangsstrom 	& $I_{IN}$ 	& 			& - 	& - 	& 8 	& $A$ \\ \hline
-    Leerlaufstrom 	& $I_{IN0}$ 	& $U_{IN} = 12V$	& - 	& 20 	& - 	& $mA$ \\ \hline
-    Ausgangsspannung, 5V& $U_{5V}$ 	& 			& 4.95 	& 5 	& 5.05 	& $V$ \\ \hline
-    Ausgangsstrom, 5V 	& $I_{5V}$ 	& 			& - 	& - 	& 2.5 	& $A$ \\ \hline
-    Umgebungstemperatur &  		& 			& -10 	& 20 	& 50 	& $^\circ C$ \\ \hline
+    \textbf{Characteristic} 	& \textbf{Symbol} 	& \textbf{Test Conditions} 	& \textbf{Min} 	& \textbf{Typ.} & \textbf{Max} 	& \textbf{Units} \\ \hline
+    Versorgungsspannung 	& $U_{IN}$ 		& 				& 8 		& 12 		& 20 		& $V$ \\ \hline
+    Eingangsstrom 		& $I_{IN}$ 		& 				& - 		& - 		& 8 		& $A$ \\ \hline
+    Leerlaufstrom 		& $I_{IN0}$ 		& $U_{IN} = 12V$		& - 		& 20 		& - 		& $mA$ \\ \hline
+    Ausgangsspannung, 5V	& $U_{5V}$ 		& 				& 4.95 		& 5 		& 5.05 		& $V$ \\ \hline
+    Ausgangsstrom, 5V 		& $I_{5V}$ 		& 				& - 		& - 		& 2.5 		& $A$ \\ \hline
+    Umgebungstemperatur 	&  			& 				& -10 		& 20 		& 50 		& $^\circ C$ \\ \hline
     \end{tabular}
 \end{center}
 
@@ -126,7 +128,7 @@ Die Grundlegenden Ausstattung, die die Erweiterungsplatine besitzen soll, bzw. b
 
 \paragraph{I2C} \mbox{} \\
 \includegraphics[scale=0.6]{connector_i2c} \\
-Der I2C-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.rn-wissen.de/index.php/RN-Definitionen\#I2C-Bus_Stecker}} belegt.
+Der I2C-Stecker dient dazu Peripherie mit Spannung und einem Busdystem zu verbinden (I2c). Er ist gemäß den RN-Definitionen\footnote{\url{http://www.rn-wissen.de/index.php/RN-Definitionen\#I2C-Bus_Stecker}} belegt.
 \begin{center}
     \begin{tabular}{| l | l |}
     \hline
@@ -140,7 +142,8 @@ Der I2C-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.rn-wiss
 \end{center}
 
 \paragraph{ICSP} \mbox{} \\
-\includegraphics[scale=0.6]{connector_icsp} 
+\includegraphics[scale=0.6]{connector_icsp} \\
+Der ICSP-Verbinder ist dazu vorhanden um den PIC mit einer Firmware beschreiben zu können. Er ist nicht als 5-Poligen Stiftleiste wie er oft realisiert wird ausgeführt, sondern als verpolungssicherer 6-Poliger Steckverbinder wie ich ihn in allen meinen anderen Schaltungen auch verwende.
 \begin{center}
     \begin{tabular}{| l | l |}
     \hline
@@ -152,8 +155,9 @@ Der I2C-Stecker ist gemäß den RN-Definitionen\footnote{\url{http://www.rn-wiss
     \end{tabular}
 \end{center}
 
-\paragraph{8-Bit} \mbox{} \\
-\includegraphics[scale=0.6]{connector_8-bit}
+\paragraph{8-Bit Datenportstecker} \mbox{} \\
+\includegraphics[scale=0.6]{connector_8-bit} \\
+Es können hier 8 Signale übertragen werden, welche je nach Steckverbinder Analog oder Digital sein können.
 \begin{center}
     \begin{tabular}{| l | l |}
     \hline
@@ -231,7 +235,7 @@ Falls die Spannung höher als etwa 5,2V steigen sollte funktioniert der Step-Dow
 \begin{center}
     \begin{tabular}{| l | p{6cm} |}
     \hline
-    Problem 							& Fehlerursache \\ \hline
+    \textbf{Problem}	& \textbf{Fehlerursache} \\ \hline
     \multirow{3}{*}{Keine der Status-LED leuchtet auf}
 	& Board nicht korrekt angeschlossen \\ \cline{2-2}
 	& Sicherung durchgebrannt \\ \cline{2-2}
@@ -343,58 +347,113 @@ fbcon=map:10 fbcon=font:ProFont6x11
 \end{enumerate}
 
 \newpage
+\section{Linux-Bibliotek}
 
+Um auf den Controller zuzugreifen kann man meine kleine Bibliotek nutzen, welche alle notwendigen Funktionen besitzt um mit dem Steuerpic zu kommunizieren.
+
+\subsection{Installation}
+
+\begin{enumerate}
+ \item Der Inhalt des Ordners \path{lib} wird auf die SD-Karte des RaspberryPi kopiert (mithilfe eines USB-Stick, scp, FTP,...).
+ 
+ \item Es wird in das Verzeichnis \path{libPointhiBoard} gewechselt, und danach wird die Bibliotek gebaut:
+    \begin{lstlisting}[language=sh]
+make clean CONF=Release
+make build CONF=Release
+    \end{lstlisting}
+    
+  \item Dann kopiert man die erstelle Bibliotek und deren Include-Datei in ein anderes Verzeichnis:
+    \begin{lstlisting}[language=sh]
+sudo cp dist/Release/GNU-Linux-x86/libPointhiBoard.so /usr/local/lib/libPointhiBoard.so
+sudo cp src/PointhiBoard.h /usr/local/include/PointhiBoard.h
+    \end{lstlisting}
+    
+  \item Falls \path{/usr/local/lib} beim kompilieren von Software nicht durchsucht wird muss dieser pfad noch in \path{/etc/ld.so.conf} hinzugefügt werden:
+    \begin{lstlisting}[language=sh]
+sudo sh -c "echo '/usr/local/lib' >> /etc/ld.so.conf"
+sudo ldconfig
+    \end{lstlisting}   
+    
+\end{enumerate}
+
+\newpage
 \section{PIC-Firmware}
 
 \subsection{I2C}
 
 \subsubsection{Schreiben}
 
-Das erste übertragene Byte setzt den Schreib/Lese-Index fest. Dieser wird dann nach jedem weiteren Schreib/Lesebefehl jeweils um 1 inkrementiert, solange er nicht neu gesetzt wurde.
+Das erste übertragene Byte setzt den Schreib/Lese-Index fest. Dieser wird dann nach jedem weiteren Schreib/Lesebefehl jeweils um 1 inkrementiert, solange er nicht durch eine neue Schreibübertragung neu gesetzt wurde.
 
 \begin{center}
     \begin{tabular}{| l | l | l |}
     \hline
-    Index 	& Aktion 	& Information \\ \hline
-    0x01 	& Setze TRISB 	& 1... Eingang, 0... Ausgang \\ \hline
-    0x0F 	& Setze PORTB 	& 1... High, 0... Low \\ \hline
+    \textbf{Index} 	& \textbf{Aktion} 	& \textbf{Information} \\ \hline
+    0x01 		& Setze TRISB 		& 1... Eingang, 0... Ausgang \\ \hline
+    0x0F 		& Setze PORTB 		& 1... High, 0... Low \\ \hline
     \end{tabular}
 \end{center}
 
 \subsubsection{Lesen}
 
+Je nach aktuellem Wert des Schreib/Lese-Index wird die jeweilige Variable ausgelesen, und danach der Schreib/Lese-Index um 1. Inkrementiert.
+
 \begin{center}
     \begin{tabular}{| l | l | l |}
     \hline
-    Index 	& Aktion 			& Information \\ \hline
-    0x01 	& Lese TRISB 			& 1... Eingang, 0... Ausgang \\ \hline
-    0x0F 	& Lese PORTB 			& 1... High, 0... Low \\ \hline
-    0x10 	& ADC - 0 VOLTAGE-HIGH-BYTE 	& \\ \hline
-    0x11 	& ADC - 0 VOLTAGE-LOW-BYTE 	& \\ \hline
-    0x12 	& ADC - 1 VOLTAGE-HIGH-BYTE 	& \\ \hline
-    0x13 	& ADC - 1 VOLTAGE-LOW-BYTE 	& \\ \hline
-    0x14 	& ADC - 2 VOLTAGE-HIGH-BYTE 	& \\ \hline
-    0x15 	& ADC - 2 VOLTAGE-LOW-BYTE 	& \\ \hline
-    0x16 	& ADC - 3 VOLTAGE-HIGH-BYTE 	& \\ \hline
-    0x17 	& ADC - 3 VOLTAGE-LOW-BYTE 	& \\ \hline
-    0x18 	& ADC - 4 VOLTAGE-HIGH-BYTE 	& \\ \hline
-    0x19 	& ADC - 4 VOLTAGE-LOW-BYTE 	& \\ \hline
-    0x1A 	& ADC - 5 VOLTAGE-HIGH-BYTE 	& \\ \hline
-    0x1B 	& ADC - 5 VOLTAGE-LOW-BYTE 	& \\ \hline
-    0x1C 	& ADC - 6 VOLTAGE-HIGH-BYTE 	& \\ \hline
-    0x1D 	& ADC - 6 VOLTAGE-LOW-BYTE 	& \\ \hline
-    0x1E 	& ADC - 7 VOLTAGE-HIGH-BYTE 	& \\ \hline
-    0x1F 	& ADC - 7 VOLTAGE-LOW-BYTE 	& \\ \hline
-    0x20 	& ADC - VCC VOLTAGE-HIGH-BYTE 	& \\ \hline
-    0x21 	& ADC - VCC VOLTAGE-LOW-BYTE 	& \\ \hline
-    0x22 	& ADC - +5V VOLTAGE-HIGH-BYTE 	& \\ \hline
-    0x23 	& ADC - +5V VOLTAGE-LOW-BYTE 	& \\ \hline
+    \textbf{Index}	& \textbf{Aktion} 		& \textbf{Information} \\ \hline
+    0x01 		& Lese TRISB 			& 1... Eingang, 0... Ausgang \\ \hline
+    0x0F 		& Lese PORTB 			& 1... High, 0... Low \\ \hline
+    0x10 		& ADC - 0 VOLTAGE-HIGH-BYTE 	& \\ \hline
+    0x11 		& ADC - 0 VOLTAGE-LOW-BYTE 	& \\ \hline
+    0x12 		& ADC - 1 VOLTAGE-HIGH-BYTE 	& \\ \hline
+    0x13 		& ADC - 1 VOLTAGE-LOW-BYTE 	& \\ \hline
+    0x14 		& ADC - 2 VOLTAGE-HIGH-BYTE 	& \\ \hline
+    0x15 		& ADC - 2 VOLTAGE-LOW-BYTE 	& \\ \hline
+    0x16 		& ADC - 3 VOLTAGE-HIGH-BYTE 	& \\ \hline
+    0x17 		& ADC - 3 VOLTAGE-LOW-BYTE 	& \\ \hline
+    0x18 		& ADC - 4 VOLTAGE-HIGH-BYTE 	& \\ \hline
+    0x19 		& ADC - 4 VOLTAGE-LOW-BYTE 	& \\ \hline
+    0x1A 		& ADC - 5 VOLTAGE-HIGH-BYTE 	& \\ \hline
+    0x1B 		& ADC - 5 VOLTAGE-LOW-BYTE 	& \\ \hline
+    0x1C 		& ADC - 6 VOLTAGE-HIGH-BYTE 	& \\ \hline
+    0x1D 		& ADC - 6 VOLTAGE-LOW-BYTE 	& \\ \hline
+    0x1E 		& ADC - 7 VOLTAGE-HIGH-BYTE 	& \\ \hline
+    0x1F 		& ADC - 7 VOLTAGE-LOW-BYTE 	& \\ \hline
+    0x20 		& ADC - VCC VOLTAGE-HIGH-BYTE 	& \\ \hline
+    0x21 		& ADC - VCC VOLTAGE-LOW-BYTE 	& \\ \hline
+    0x22 		& ADC - +5V VOLTAGE-HIGH-BYTE 	& \\ \hline
+    0x23 		& ADC - +5V VOLTAGE-LOW-BYTE 	& \\ \hline
     \end{tabular}
 \end{center}
 
 \newpage
 \section{Anhänge}
 
+\subsection{Schaltplanteile}
+
+\subsubsection{Step-Down-Wandler}
+
+\includegraphics[width=\textwidth]{circuit_step-down} \\
+Der Step-Down Wandler entspricht großteils der Beispielbeschaltung und Dimensionierung im Datenblatt. Abweichend zum Datenblatt wurden größere Kapazitäten am Eingang und Ausgang definiert, welche durch Paralellschaltung mehrerer Kondensatoren realisiert wurde um den ESR niedrig zu halten. \\\\
+Die Spule ist Geschirmt um den Wirkungsgrad des Step-Down Wandlers niedrig zu halten, und besitzt einen Maximalstrom von etwa 8A um bei Strömen bis 3A sauber arbeiten zu können (Die Induktivität eines Schaltreglers sollte etwa 2-3 mal so viel aushalten wie eigentlich benötigt).
+
+\subsubsection{Echtzeituhr}
+
+\includegraphics[width=\textwidth]{circuit_rtc} \\
+Es wird eine günstige Echtzeituhr genutzt, welche dank Lithium-Batterie auch ohne Versorgungsspannung ihre Zeit nicht verliert. Sie ist am 3,3V Bereich des I2C-Bus angeschlossen und entspricht in der Dimensionierung der Beispielbeschaltung.
+
+\subsubsection{FET-Treiber}
+
+\includegraphics[width=\textwidth]{circuit_fet} \\
+Das ist eine grundlegende Schaltung um Spannungen ohne große Schaltverluste schalten zu können. Im Board wird diese Schaltung 2. Mal verwendet um im Tiefentladefall die Peripherie vollständig zu deaktivieren (inkl. RaspberryPi und allen an Steckverbinder angeschlossene Module)
+
+\subsubsection{I2C-Steckverbinder + Pull-Up}
+
+\includegraphics[width=\textwidth]{circuit_i2c-connector} \\
+Der I2C-Steckverbinder ist die Hauptschnittstelle zum Anbinden zusätzlicher Peripherie. Sie ist nach RN-Standard belegt um eine kompalibität mit anderen Platinen zu gewährleisten.
+
+\newpage
 \subsection{Bestückungsplan}
 
 \subsubsection{Top-Layer}
@@ -415,8 +474,8 @@ Das erste übertragene Byte setzt den Schreib/Lese-Index fest. Dieser wird dann 
 
 \blfootnote{\url{http://dangerousprototypes.com/docs/I2C}}
 
-Der BusPirat\footnote{\url{http://dangerousprototypes.com/bus-pirate-manual}} ist ein kompaktes Entwicklermodul zum Debuggen diverser Bussysteme. Er ist Open-Hardware, und kann in der Standardversion diverse Protokolle wie I2C, SPI, RS232, 1-Wire mitlesen und auch selber eigene Daten versenden. \\
-Ich habe den BusPirat zum debuggen des I2C-Codes Benutzt, und das hier stellt eine kurze Anleitung zur Inbetriebnahme dar.
+Der BusPirat\footnote{\url{http://dangerousprototypes.com/bus-pirate-manual}} ist ein kompaktes Entwicklermodul zum Debuggen diverser Bussysteme. Er ist Open-Hardware, und kann in der Standardversion diverse Protokolle wie I2C, SPI, RS232, 1-Wire mitlesen und auch selber eigene Daten versenden. \\\\
+Ich habe den BusPirat zum debuggen des I2C-Codes benutzt, und das hier stellt eine kurze Anleitung zur Inbetriebnahme dar.
 
 \subsubsection{Nötige Schritte zur Inbetriebnahme des I2C-Debugger}
 
@@ -461,6 +520,48 @@ p
     Zuerst wird die Adresse geschrieben, danach kommt ein r:bitanzahl (funktioniert noch nicht ganz)
 \end{itemize}
 
+\begin{comment}
+% nicht für die Dokumentation benötigt
+\newpage
+\subsection{Arbeitstage}
+\begin{center}
+
+\begin{tabular}{| l | l |}
+    \hline
+    \textbf{Datum} 	& \textbf{Arbeit}\\ \hline
+    03.10.2013		& Hardware design 						\\ \hline
+    10.10.2013 		& Teilebestellung 						\\ \hline
+    17.10.2013 		& Hardwarebestückung (V1.2), Testen 				\\ \hline
+    24.10.2013 		& Hardwarebestückung (V1.2), Testen 				\\ \hline
+    07.11.2013 		& Hardware fertig bestücken (V1.2), erste Tests (erfolgreich) 	\\ \hline
+    14.11.2013 		& Überarbeitung der Software 					\\ \hline
+    21.11.2013 		& Fehlersuche, Massenbestellung					\\ \hline
+    28.11.2013 		& Fehlersuche, Treiber installieren				\\ \hline
+    05.12.2013 		& Fehlersuche							\\ \hline
+    12.12.2013 		& Fehlersuche							\\ \hline
+    19.12.2013 		& Fehler gefunden (LVP war aktiviert), Board umzeichen		\\ \hline
+    09.01.2014 		& Schreiben der Dokumentation, I2C-RTC Inbetriebnahme		\\ \hline
+    16.01.2014 		& optimieren der RTC, Recherche für TFT-Treiber vereinfachung	\\ \hline
+    23.01.2014 		& Schreiben der Dokumentation					\\ \hline
+    30.01.2014 		& diverse Arbeiten						\\ \hline
+    06.02.2014 		& Hardwarebestückung (V1.3), Step-Down testen			\\ \hline
+    13.02.2014 		& Hardwarebestückung (V1.3)					\\ \hline
+    27.02.2014 		& Testen, Fehlersuche, Grundlegende Programmierung der Firmware	\\ \hline
+    06.03.2014 		& Firmware Testen (ADC), Step-Down kaputt - Ausgelötet		\\ \hline
+    13.03.2014 		& Bestellung, div. Arbeiten					\\ \hline
+    20.03.2014 		& div. Arbeiten							\\ \hline
+    27.03.2014 		& Platine reparieren und vervollständigt, Testplatine gelötet	\\ \hline
+    03.04.2014 		& Testplatine gelötet, testen des AD-Teils der Firmware		\\ \hline
+    10.04.2014 		& ADC-Routine gefixt, kalte Lötstelle bei ADC entfernt		\\ \hline
+    24.04.2014 		& Dokumentation, Bestückungsplan				\\ \hline
+    08.05.2014 		& Bibliotek programmieren					\\ \hline
+    15.05.2014 		& Bibliotek programmieren, Beispielprogramm, Dokumentation	\\ \hline
+    22.05.2014 		& Bugfix im Beispielprogramm, Dokumentation, Präsentation vorbereiten	\\ \hline
+    05.06.2014 		& Präsentationen anschauen					\\ \hline
+    12.06.2014 		& 								\\ \hline
+    \end{tabular}
+\end{center}
+\end{comment}
 
 \newpage
 \subsection{Lizenz}
