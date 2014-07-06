@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux-x86
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
-CND_ARTIFACT_NAME_Debug=liblibPointhiBoard.so
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/liblibPointhiBoard.so
+CND_ARTIFACT_NAME_Debug=libPointhiBoard.so
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/libPointhiBoard.so
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
-CND_PACKAGE_NAME_Debug=liblibPointhiBoard.so.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/liblibPointhiBoard.so.tar
+CND_PACKAGE_NAME_Debug=libPointhiBoard.so.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/libPointhiBoard.so.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux-x86
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux-x86
-CND_ARTIFACT_NAME_Release=liblibPointhiBoard.so
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/liblibPointhiBoard.so
+CND_ARTIFACT_NAME_Release=libPointhiBoard.so
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/libPointhiBoard.so
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux-x86/package
-CND_PACKAGE_NAME_Release=liblibPointhiBoard.so.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/liblibPointhiBoard.so.tar
+CND_PACKAGE_NAME_Release=libPointhiBoard.so.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/libPointhiBoard.so.tar
 #
 # include compiler specific variables
 #
