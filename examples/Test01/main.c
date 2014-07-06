@@ -24,17 +24,6 @@ int main(int argc, char** argv) {
     printf("Set PORTB output\n");
     PbI2cSetRegister(_PB_REGISTER_S_PORTB, 0x55);
 
-    /*
-        printf("Get ADC-Values\n");
-        unsigned int adc_high = PbI2cGetRegister(_PB_REGISTER_G_ADC0_H);
-        unsigned int adc_low = PbI2cGetRegister(_PB_REGISTER_G_ADC0_L);
-        float adc = (float) ((int) (adc_low | (adc_high < 8))) / 1000.;
-     */
-
-    /*
-        printf("Voltage from ADC0: %fV\n", adc);
-     */
-
     PbPrintStatus();
 
     printf("Close I2c-Connection\n");
