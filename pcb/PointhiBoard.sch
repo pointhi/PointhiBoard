@@ -21824,17 +21824,16 @@ Low profile connectors, straight&lt;p&gt;
 <plain>
 <text x="363.22" y="58.42" size="1.778" layer="97">Funktionsfähig laut LT-Spice</text>
 <text x="368.3" y="63.5" size="1.778" layer="97">Auch für Eingang = 5V</text>
-<text x="22.86" y="147.32" size="1.778" layer="97">I2C-Sp.-Konverter Funktionsfähig laut LTspice</text>
 <text x="370.84" y="160.02" size="1.778" layer="97">?</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="81.28" y="78.74"/>
-<instance part="SV2" gate="G$1" x="22.86" y="7.62"/>
+<instance part="SV2" gate="G$1" x="5.08" y="5.08"/>
 <instance part="Q1" gate="G$1" x="45.72" y="111.76"/>
 <instance part="Q2" gate="G$1" x="22.86" y="111.76"/>
-<instance part="GND1" gate="1" x="12.7" y="-5.08"/>
-<instance part="P+1" gate="1" x="33.02" y="25.4"/>
-<instance part="VDD1" gate="G$1" x="38.1" y="43.18"/>
+<instance part="GND1" gate="1" x="-5.08" y="-7.62"/>
+<instance part="P+1" gate="1" x="15.24" y="22.86"/>
+<instance part="VDD1" gate="G$1" x="20.32" y="30.48"/>
 <instance part="X1" gate="-1" x="347.98" y="134.62"/>
 <instance part="X1" gate="-2" x="347.98" y="127"/>
 <instance part="X2" gate="-1" x="347.98" y="109.22"/>
@@ -21843,10 +21842,10 @@ Low profile connectors, straight&lt;p&gt;
 <instance part="P+2" gate="1" x="365.76" y="167.64"/>
 <instance part="R1" gate="G$1" x="76.2" y="127" rot="R90"/>
 <instance part="R2" gate="G$1" x="83.82" y="127" rot="R90"/>
-<instance part="R3" gate="G$1" x="50.8" y="15.24" rot="R90"/>
-<instance part="R4" gate="G$1" x="58.42" y="15.24" rot="R90"/>
-<instance part="P+3" gate="1" x="50.8" y="33.02"/>
-<instance part="P+4" gate="1" x="58.42" y="33.02"/>
+<instance part="R3" gate="G$1" x="33.02" y="12.7" rot="R90"/>
+<instance part="R4" gate="G$1" x="40.64" y="12.7" rot="R90"/>
+<instance part="P+3" gate="1" x="33.02" y="30.48"/>
+<instance part="P+4" gate="1" x="40.64" y="30.48"/>
 <instance part="IC4" gate="G$1" x="347.98" y="55.88" rot="R90"/>
 <instance part="T3" gate="G$1" x="342.9" y="40.64"/>
 <instance part="GND17" gate="1" x="345.44" y="22.86"/>
@@ -21857,16 +21856,22 @@ Low profile connectors, straight&lt;p&gt;
 <instance part="LCD1" gate="G$1" x="185.42" y="96.52"/>
 <instance part="Q3" gate="G$1" x="-27.94" y="111.76"/>
 <instance part="R5" gate="G$1" x="2.54" y="127" rot="R90"/>
-<instance part="R6" gate="G$1" x="10.16" y="22.86" rot="R90"/>
-<instance part="P+5" gate="1" x="10.16" y="35.56"/>
+<instance part="R6" gate="G$1" x="-7.62" y="20.32" rot="R90"/>
+<instance part="P+5" gate="1" x="-7.62" y="30.48"/>
 <instance part="IC1" gate="G$1" x="10.16" y="-55.88"/>
-<instance part="Q4" gate="G$1" x="60.96" y="-45.72" rot="R270"/>
+<instance part="Q4" gate="G$1" x="60.96" y="-45.72" smashed="yes" rot="R270">
+<attribute name="NAME" x="55.88" y="-44.704" size="1.778" layer="95"/>
+<attribute name="VALUE" x="48.26" y="-38.1" size="1.778" layer="96"/>
+</instance>
 <instance part="C1" gate="G$1" x="68.58" y="-40.64" rot="R90"/>
 <instance part="C2" gate="G$1" x="68.58" y="-50.8" rot="R90"/>
 <instance part="TP1" gate="G$1" x="-17.78" y="-40.64" rot="R270"/>
 <instance part="C3" gate="G$1" x="-5.08" y="-25.4" rot="R90"/>
 <instance part="IC3" gate="G$1" x="347.98" y="-7.62" rot="R90"/>
-<instance part="T1" gate="G$1" x="342.9" y="-22.86"/>
+<instance part="T1" gate="G$1" x="342.9" y="-22.86" smashed="yes">
+<attribute name="NAME" x="347.98" y="-22.86" size="1.778" layer="95"/>
+<attribute name="VALUE" x="347.98" y="-25.4" size="1.778" layer="96"/>
+</instance>
 <instance part="GND18" gate="1" x="345.44" y="-40.64"/>
 <instance part="R17" gate="G$1" x="330.2" y="-22.86" rot="R180"/>
 <instance part="R18" gate="G$1" x="330.2" y="-12.7" rot="R180"/>
@@ -21880,7 +21885,7 @@ Low profile connectors, straight&lt;p&gt;
 <instance part="SUPPLY4" gate="G$1" x="228.6" y="147.32"/>
 <instance part="SUPPLY5" gate="G$1" x="322.58" y="10.16"/>
 <instance part="VDD2" gate="G$1" x="360.68" y="116.84"/>
-<instance part="SJ1" gate="1" x="38.1" y="30.48" rot="R90"/>
+<instance part="SJ1" gate="1" x="20.32" y="17.78" rot="R90"/>
 <instance part="J1" gate="-1" x="386.08" y="-5.08"/>
 <instance part="J1" gate="-2" x="386.08" y="-10.16"/>
 <instance part="GND39" gate="1" x="381" y="-22.86"/>
@@ -21890,7 +21895,10 @@ Low profile connectors, straight&lt;p&gt;
 <instance part="R8" gate="G$1" x="111.76" y="106.68" rot="R90"/>
 <instance part="IC2" gate="G$1" x="12.7" y="-129.54"/>
 <instance part="GND8" gate="1" x="12.7" y="-157.48"/>
-<instance part="L1" gate="G$1" x="58.42" y="-129.54"/>
+<instance part="L1" gate="G$1" x="58.42" y="-129.54" smashed="yes">
+<attribute name="NAME" x="53.34" y="-124.46" size="1.778" layer="95"/>
+<attribute name="VALUE" x="48.26" y="-137.16" size="1.778" layer="96"/>
+</instance>
 <instance part="D1" gate="G$1" x="40.64" y="-147.32" rot="R90"/>
 <instance part="GND9" gate="1" x="40.64" y="-157.48"/>
 <instance part="C5" gate="G$1" x="33.02" y="-124.46" rot="R90"/>
@@ -21899,8 +21907,8 @@ Low profile connectors, straight&lt;p&gt;
 <instance part="GND10" gate="1" x="-17.78" y="-157.48"/>
 <instance part="C7" gate="G$1" x="76.2" y="-144.78"/>
 <instance part="GND11" gate="1" x="76.2" y="-157.48"/>
-<instance part="P+6" gate="1" x="-17.78" y="-96.52"/>
-<instance part="SUPPLY7" gate="G$1" x="76.2" y="-116.84"/>
+<instance part="P+6" gate="1" x="-17.78" y="-101.6"/>
+<instance part="SUPPLY7" gate="G$1" x="76.2" y="-119.38"/>
 <instance part="IC5" gate="G$1" x="287.02" y="-165.1"/>
 <instance part="SV1" gate="1" x="429.26" y="-78.74"/>
 <instance part="GND12" gate="1" x="419.1" y="-96.52"/>
@@ -22010,7 +22018,7 @@ Low profile connectors, straight&lt;p&gt;
 <instance part="GND19" gate="1" x="401.32" y="-147.32"/>
 <instance part="P+16" gate="1" x="261.62" y="22.86"/>
 <instance part="P+10" gate="G$1" x="162.56" y="-119.38"/>
-<instance part="P+14" gate="G$1" x="-40.64" y="-96.52"/>
+<instance part="P+14" gate="G$1" x="-40.64" y="-101.6"/>
 <instance part="D6" gate="G$1" x="355.6" y="40.64" rot="R90"/>
 <instance part="GND20" gate="1" x="355.6" y="22.86"/>
 <instance part="P+15" gate="1" x="584.2" y="-99.06"/>
@@ -22064,12 +22072,12 @@ Low profile connectors, straight&lt;p&gt;
 </segment>
 <segment>
 <pinref part="SV2" gate="G$1" pin="3"/>
-<wire x1="30.48" y1="5.08" x2="58.42" y2="5.08" width="0.1524" layer="91"/>
-<label x="71.12" y="5.08" size="1.778" layer="95" xref="yes"/>
+<wire x1="12.7" y1="2.54" x2="40.64" y2="2.54" width="0.1524" layer="91"/>
+<label x="55.88" y="2.54" size="1.778" layer="95" xref="yes"/>
 <pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="58.42" y1="5.08" x2="71.12" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="10.16" x2="58.42" y2="5.08" width="0.1524" layer="91"/>
-<junction x="58.42" y="5.08"/>
+<wire x1="40.64" y1="2.54" x2="55.88" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="7.62" x2="40.64" y2="2.54" width="0.1524" layer="91"/>
+<junction x="40.64" y="2.54"/>
 </segment>
 <segment>
 <pinref part="IC5" gate="G$1" pin="RC4/SDI/SDA"/>
@@ -22080,12 +22088,12 @@ Low profile connectors, straight&lt;p&gt;
 <net name="I2C_SCL" class="0">
 <segment>
 <pinref part="SV2" gate="G$1" pin="1"/>
-<wire x1="30.48" y1="2.54" x2="50.8" y2="2.54" width="0.1524" layer="91"/>
-<label x="55.88" y="2.54" size="1.778" layer="95" xref="yes"/>
+<wire x1="12.7" y1="0" x2="33.02" y2="0" width="0.1524" layer="91"/>
+<label x="40.64" y="0" size="1.778" layer="95" xref="yes"/>
 <pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="50.8" y1="2.54" x2="55.88" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="10.16" x2="50.8" y2="2.54" width="0.1524" layer="91"/>
-<junction x="50.8" y="2.54"/>
+<wire x1="33.02" y1="0" x2="40.64" y2="0" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="7.62" x2="33.02" y2="0" width="0.1524" layer="91"/>
+<junction x="33.02" y="0"/>
 </segment>
 <segment>
 <pinref part="Q2" gate="G$1" pin="D"/>
@@ -22102,21 +22110,21 @@ Low profile connectors, straight&lt;p&gt;
 <net name="GND" class="0">
 <segment>
 <pinref part="SV2" gate="G$1" pin="2"/>
-<wire x1="15.24" y1="2.54" x2="12.7" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="0" x2="-5.08" y2="0" width="0.1524" layer="91"/>
 <pinref part="SV2" gate="G$1" pin="8"/>
-<wire x1="12.7" y1="2.54" x2="12.7" y2="5.08" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="5.08" x2="12.7" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="7.62" x2="12.7" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="12.7" y1="10.16" x2="15.24" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="0" x2="-5.08" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="7.62" x2="-2.54" y2="7.62" width="0.1524" layer="91"/>
 <pinref part="SV2" gate="G$1" pin="6"/>
-<wire x1="15.24" y1="7.62" x2="12.7" y2="7.62" width="0.1524" layer="91"/>
-<junction x="12.7" y="7.62"/>
+<wire x1="-2.54" y1="5.08" x2="-5.08" y2="5.08" width="0.1524" layer="91"/>
+<junction x="-5.08" y="5.08"/>
 <pinref part="SV2" gate="G$1" pin="4"/>
-<wire x1="15.24" y1="5.08" x2="12.7" y2="5.08" width="0.1524" layer="91"/>
-<junction x="12.7" y="5.08"/>
+<wire x1="-2.54" y1="2.54" x2="-5.08" y2="2.54" width="0.1524" layer="91"/>
+<junction x="-5.08" y="2.54"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="12.7" y1="-2.54" x2="12.7" y2="2.54" width="0.1524" layer="91"/>
-<junction x="12.7" y="2.54"/>
+<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="0" width="0.1524" layer="91"/>
+<junction x="-5.08" y="0"/>
 </segment>
 <segment>
 <pinref part="X2" gate="-2" pin="SK"/>
@@ -22331,28 +22339,28 @@ Low profile connectors, straight&lt;p&gt;
 <net name="+5V" class="0">
 <segment>
 <pinref part="SV2" gate="G$1" pin="5"/>
-<wire x1="30.48" y1="7.62" x2="33.02" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="7.62" x2="33.02" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="5.08" x2="15.24" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="5.08" x2="15.24" y2="7.62" width="0.1524" layer="91"/>
 <pinref part="SV2" gate="G$1" pin="7"/>
-<wire x1="33.02" y1="10.16" x2="30.48" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="10.16" x2="33.02" y2="22.86" width="0.1524" layer="91"/>
-<junction x="33.02" y="10.16"/>
+<wire x1="15.24" y1="7.62" x2="12.7" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="7.62" x2="15.24" y2="20.32" width="0.1524" layer="91"/>
+<junction x="15.24" y="7.62"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="P+3" gate="1" pin="+5V"/>
-<wire x1="50.8" y1="20.32" x2="50.8" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="17.78" x2="33.02" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+4" gate="1" pin="+5V"/>
 <pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="58.42" y1="30.48" x2="58.42" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="27.94" x2="40.64" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+5" gate="1" pin="+5V"/>
 <pinref part="R6" gate="G$1" pin="2"/>
-<wire x1="10.16" y1="33.02" x2="10.16" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="27.94" x2="-7.62" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="D"/>
@@ -22410,18 +22418,17 @@ Low profile connectors, straight&lt;p&gt;
 <segment>
 <pinref part="SJ1" gate="1" pin="2"/>
 <pinref part="VDD1" gate="G$1" pin="VDD"/>
-<wire x1="38.1" y1="35.56" x2="38.1" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="22.86" x2="20.32" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="SV2" gate="G$1" pin="9"/>
-<wire x1="38.1" y1="38.1" x2="38.1" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="12.7" x2="38.1" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="25.4" x2="20.32" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="10.16" x2="20.32" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="SJ1" gate="1" pin="1"/>
-<wire x1="38.1" y1="25.4" x2="38.1" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="22.86" x2="38.1" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="22.86" x2="43.18" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="22.86" x2="43.18" y2="38.1" width="0.1524" layer="91"/>
-<junction x="38.1" y="22.86"/>
-<wire x1="43.18" y1="38.1" x2="38.1" y2="38.1" width="0.1524" layer="91"/>
-<junction x="38.1" y="38.1"/>
+<wire x1="20.32" y1="12.7" x2="20.32" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="10.16" x2="25.4" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="10.16" x2="25.4" y2="25.4" width="0.1524" layer="91"/>
+<junction x="20.32" y="10.16"/>
+<wire x1="25.4" y1="25.4" x2="20.32" y2="25.4" width="0.1524" layer="91"/>
+<junction x="20.32" y="25.4"/>
 </segment>
 <segment>
 <pinref part="VDD3" gate="G$1" pin="VDD"/>
@@ -22483,7 +22490,7 @@ Low profile connectors, straight&lt;p&gt;
 <segment>
 <pinref part="D5" gate="G$1" pin="A"/>
 <pinref part="P+6" gate="1" pin="V+"/>
-<wire x1="-17.78" y1="-99.06" x2="-17.78" y2="-106.68" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="-104.14" x2="-17.78" y2="-106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+13" gate="1" pin="V+"/>
@@ -22580,12 +22587,12 @@ Low profile connectors, straight&lt;p&gt;
 </segment>
 <segment>
 <pinref part="SV2" gate="G$1" pin="10"/>
-<wire x1="15.24" y1="12.7" x2="10.16" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="10.16" x2="-7.62" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="10.16" y1="12.7" x2="-10.16" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="17.78" x2="10.16" y2="12.7" width="0.1524" layer="91"/>
-<junction x="10.16" y="12.7"/>
-<label x="-10.16" y="12.7" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="-7.62" y1="10.16" x2="-12.7" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="15.24" x2="-7.62" y2="10.16" width="0.1524" layer="91"/>
+<junction x="-7.62" y="10.16"/>
+<label x="-12.7" y="10.16" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="SPI_MOSI" class="0">
@@ -22808,7 +22815,7 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="76.2" y1="-134.62" x2="76.2" y2="-142.24" width="0.1524" layer="91"/>
 <junction x="76.2" y="-134.62"/>
 <pinref part="SUPPLY7" gate="G$1" pin="+5V/1"/>
-<wire x1="76.2" y1="-119.38" x2="76.2" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="-121.92" x2="76.2" y2="-129.54" width="0.1524" layer="91"/>
 <junction x="76.2" y="-129.54"/>
 <pinref part="C13" gate="G$1" pin="2"/>
 <wire x1="76.2" y1="-134.62" x2="86.36" y2="-134.62" width="0.1524" layer="91"/>
@@ -23494,7 +23501,7 @@ Low profile connectors, straight&lt;p&gt;
 <wire x1="-17.78" y1="-124.46" x2="-40.64" y2="-124.46" width="0.1524" layer="91"/>
 <wire x1="-40.64" y1="-124.46" x2="-40.64" y2="-142.24" width="0.1524" layer="91"/>
 <pinref part="P+14" gate="G$1" pin="VCC/2"/>
-<wire x1="-40.64" y1="-99.06" x2="-40.64" y2="-124.46" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="-104.14" x2="-40.64" y2="-124.46" width="0.1524" layer="91"/>
 <junction x="-40.64" y="-124.46"/>
 </segment>
 </net>
